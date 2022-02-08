@@ -74,7 +74,6 @@ let calculator = {
         this.second = +prompt("second", this.second);
     },
     sum: function sum() {
-        console.log((this.first));
         return this.first + this.second;
     },
     mul: function mul() {
@@ -82,9 +81,9 @@ let calculator = {
     },
 };
   
-calculator.read();
-console.log( calculator.sum() );
-console.log( calculator.mul() );
+// calculator.read();
+// console.log( calculator.sum() );
+// console.log( calculator.mul() );
 console.log( "" );
 
 //Цепь вызовов
@@ -106,3 +105,64 @@ let ladder = {
 };
 
 ladder.up().up().down().showStep();
+console.log( "" );
+
+//Две функции - один объект
+let obj = {};
+
+function A() {
+    return obj;
+}
+function B() {
+    return obj;
+}
+
+let a = new A;
+let b = new B;
+
+console.log( a == b );
+console.log( "" );
+
+//Создание калькулятора при помощи конструктора
+function Calculator() {
+    let calculator = {
+        first: 0,
+        second: 0,
+        read: function read() {
+            this.first = +prompt("first", this.first);
+            this.second = +prompt("second", this.second);
+        },
+        sum: function sum() {
+            return this.first + this.second;
+        },
+        mul: function mul() {
+            return this.first * this.second;
+        },
+    };
+
+    return calculator;
+}
+
+let calculatorConstructor = new Calculator();
+//calculatorConstructor.read();
+
+//console.log( "Sum=" + calculatorConstructor.sum() );
+//console.log( "Mul=" + calculatorConstructor.mul() );
+
+//Создаём Accumulator
+function Accumulator(startingValue) {
+    this.value = startingValue;
+
+    this.read = function() {
+        let input = +prompt("input", 0);
+        this.value = this.value + input;
+    }
+}
+
+let accumulator = new Accumulator(1);
+
+accumulator.read();
+accumulator.read();
+
+console.log(accumulator.value);
+console.log( "" );
