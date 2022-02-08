@@ -27,6 +27,7 @@ let schedule = {};
 console.log( isEmpty(schedule) );
 schedule["8:30"] = "get up";
 console.log( isEmpty(schedule) );
+console.log( "" );
 
 //Сумма свойств объекта
 let salaries = {
@@ -42,6 +43,7 @@ for (const key in salaries) {
 }
 
 console.log(salariesRes);
+console.log( "" );
 
 //Умножаем все числовые свойства на 2
 function multiplyNumeric(obj) {
@@ -61,3 +63,46 @@ let menu = {
 console.log(menu);
 multiplyNumeric(menu);
 console.log(menu);
+console.log( "" );
+
+//Создайте калькулятор
+let calculator = {
+    first: 0,
+    second: 0,
+    read: function read() {
+        this.first = +prompt("first", this.first);
+        this.second = +prompt("second", this.second);
+    },
+    sum: function sum() {
+        console.log((this.first));
+        return this.first + this.second;
+    },
+    mul: function mul() {
+        return this.first * this.second;
+    },
+};
+  
+calculator.read();
+console.log( calculator.sum() );
+console.log( calculator.mul() );
+console.log( "" );
+
+//Цепь вызовов
+let ladder = {
+    step: 0,
+    up: function up() {
+        this.step = this.step + 1;
+
+        return this;
+    },
+    down: function down() {
+        this.step = this.step - 1;
+
+        return this;
+    },
+    showStep: function() { // показывает текущую ступеньку
+        console.log( this.step );
+    }
+};
+
+ladder.up().up().down().showStep();
