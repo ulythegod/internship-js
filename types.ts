@@ -134,25 +134,15 @@ let values = ["Hare", "Krishna", "Hare", "Krishna",
 
 function aclean(arr: string[]): string[] {
     let result: string[] = [];
-    let setOfuniqueValues: Set<string> = new Set();
+    let setOfUniqueValues: Set<string> = new Set();
 
     for (let i = 0; i < arr.length; i++) {
-        arr[i] = arr[i].toLowerCase();
-        let arrayForSort: string[] = arr[i].split("");
-        for (let j = 0; j < arrayForSort.length; j++) {            
-            if (arrayForSort[j] > arrayForSort[j + 1]) {
-                let temp: string = arrayForSort[j];
-                arrayForSort.splice(j, 1, arr[i][j + 1]);
-                arrayForSort.splice(j + 1, 1, temp);
-            }            
-        }
+        let sorted: string = arr[i].toLowerCase().split("").sort().join("");
 
-        setOfuniqueValues.add(arrayForSort.join(""));
-    }
+        setOfUniqueValues.add(sorted);
+    }   
 
-    console.log(setOfuniqueValues);    
-
-    return result;
+    return Array.from(setOfUniqueValues);
 }
 
 let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];

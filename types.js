@@ -100,21 +100,12 @@ let values = ["Hare", "Krishna", "Hare", "Krishna",
 //console.log( unique(values) );
 function aclean(arr) {
     let result = [];
-    let setOfuniqueValues = new Set();
+    let setOfUniqueValues = new Set();
     for (let i = 0; i < arr.length; i++) {
-        arr[i] = arr[i].toLowerCase();
-        let arrayForSort = arr[i].split("");
-        for (let j = 0; j < arrayForSort.length; j++) {
-            if (arrayForSort[j] > arrayForSort[j + 1]) {
-                let temp = arrayForSort[j];
-                arrayForSort.splice(j, 1, arr[i][j + 1]);
-                arrayForSort.splice(j + 1, 1, temp);
-            }
-        }
-        setOfuniqueValues.add(arrayForSort.join(""));
+        let sorted = arr[i].toLowerCase().split("").sort().join("");
+        setOfUniqueValues.add(sorted);
     }
-    console.log(setOfuniqueValues);
-    return result;
+    return Array.from(setOfUniqueValues);
 }
 let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
 console.log(aclean(arr));
