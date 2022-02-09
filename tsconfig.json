@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "es2016",
-    "module": "commonjs",
-    "explainFiles": true
+    "lib": [
+      "DOM",
+      "es2016",
+      "DOM.Iterable",
+      "ScriptHost"
+    ]
   }
 }
