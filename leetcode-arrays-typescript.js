@@ -1,9 +1,9 @@
 //Check If N and Its Double Exist
 function checkIfExist(arr) {
-    var result = false;
+    let result = false;
     arr.forEach(function (value, index) {
-        var m = value / 2;
-        for (var i = 0; i < arr.length; i++) {
+        let m = value / 2;
+        for (let i = 0; i < arr.length; i++) {
             if (i != index && arr[i] == m) {
                 result = true;
                 return result;
@@ -17,10 +17,10 @@ function checkIfExist(arr) {
 // checkIfExist(arr);
 //Valid Mountain Array
 function validMountainArray(arr) {
-    var result = false;
+    let result = false;
     if (arr.length >= 3) {
-        var n = arr.length;
-        var i = 0;
+        let n = arr.length;
+        let i = 0;
         while (i + 1 < n && arr[i] < arr[i + 1]) {
             i++;
         }
@@ -44,8 +44,8 @@ function replaceElements(arr) {
             arr[index] = -1;
         }
         else {
-            var maxRight = arr[index + 1];
-            for (var i = index + 1; i < arr.length; i++) {
+            let maxRight = arr[index + 1];
+            for (let i = index + 1; i < arr.length; i++) {
                 if (arr[i] > maxRight) {
                     maxRight = arr[i];
                 }
@@ -60,8 +60,8 @@ function replaceElements(arr) {
 // console.log(replaceElements(arr));
 //Remove Duplicates from Sorted Array
 function removeDuplicates(nums) {
-    var result = 0;
-    for (var i = 0; i < nums.length; i++) {
+    let result = 0;
+    for (let i = 0; i < nums.length; i++) {
         if (nums[i] == nums[i + 1]) {
             nums.splice(i + 1, 1);
             i = i - 1;
@@ -71,7 +71,7 @@ function removeDuplicates(nums) {
     return result;
 }
 ;
-var src = 'const a = "Hello World"';
+const src = 'const a = "Hello World"';
 function printWindow(win) {
     console.log("title " + win.title);
     console.log("ts " + win.ts);
@@ -82,13 +82,13 @@ function printWindow(win) {
  Do not return anything, modify nums in-place instead.
  */
 function moveZeroes(nums) {
-    var lastNonZeroElem = 0;
-    for (var i = 0; i < nums.length; i++) {
+    let lastNonZeroElem = 0;
+    for (let i = 0; i < nums.length; i++) {
         if (nums[i] !== 0) {
             nums[lastNonZeroElem++] = nums[i];
         }
     }
-    for (var i = lastNonZeroElem; i < nums.length; i++) {
+    for (let i = lastNonZeroElem; i < nums.length; i++) {
         nums[i] = 0;
     }
 }
@@ -97,10 +97,10 @@ function moveZeroes(nums) {
 // moveZeroes(nums);
 //Sort Array By Parity
 function sortArrayByParity(nums) {
-    for (var i = 0; i < nums.length; i++) {
-        for (var j = nums.length - 1; j > 0; j--) {
+    for (let i = 0; i < nums.length; i++) {
+        for (let j = nums.length - 1; j > 0; j--) {
             if (nums[i] % 2 !== 0 && nums[j] % 2 === 0 && j > i) {
-                var temp = nums[i];
+                let temp = nums[i];
                 nums[i] = nums[j];
                 nums[j] = temp;
             }
@@ -113,7 +113,7 @@ function sortArrayByParity(nums) {
 // console.log(sortArrayByParity(nums));
 //Remove Element
 function removeElement(nums, val) {
-    for (var i = 0; i < nums.length; i++) {
+    for (let i = 0; i < nums.length; i++) {
         if (nums[i] == val) {
             nums.splice(i, 1);
             i--;
@@ -122,6 +122,6 @@ function removeElement(nums, val) {
     return nums.length;
 }
 ;
-var nums = [0, 1, 2, 2, 3, 0, 4, 2];
-var val = 2;
+let nums = [0, 1, 2, 2, 3, 0, 4, 2];
+let val = 2;
 removeElement(nums, val);

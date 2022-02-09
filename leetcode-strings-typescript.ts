@@ -41,14 +41,37 @@ function reverse(x: number): number {
 // console.log(reverse(x));
 
 //First Unique Character in a String
-// function firstUniqChar(s: string): number {
-//     let charIndex: number = -1;
+function firstUniqChar(s: string): number {
+    let charIndex: number = -1;
 
+    let lettersMap = new Map();
+    let arrayS: string[] = s.split("");
+    
+    for (let i = 0; i < arrayS.length; i++) {
+        if (lettersMap.get(arrayS[i])) {
+            let currentValue: string = lettersMap.get(arrayS[i]);
+            lettersMap.set(arrayS[i], currentValue + 1);
+        }
+        else {
+            lettersMap.set(arrayS[i], 1);
+        }
+    }
 
+    let uniqueLetters: string[] = [];
+    
+    lettersMap.forEach((value, index) => {
+        if (value == 1) {
+            uniqueLetters.push(index);
+        }      
+    });
 
-//     return charIndex;
-// };
+    if (uniqueLetters.length > 0) {
+        let uniqueLetter: string = uniqueLetters[0];
+        charIndex = arrayS.indexOf(uniqueLetter);
+    }
 
-// let s: string = "aabb";
-// firstUniqChar(s);
+    return charIndex;
+};
 
+let s: string = "leetcode";
+console.log(firstUniqChar(s));

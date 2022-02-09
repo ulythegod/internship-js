@@ -8,12 +8,12 @@ function reverseString(s) {
 ;
 //Reverse Integer
 function reverse(x) {
-    var result = 0;
-    var min = Math.pow(-2, 31);
-    var max = Math.pow(2, 31) - 1;
-    var strX = x.toString();
-    var numArray = strX.split("");
-    var sign = "";
+    let result = 0;
+    let min = Math.pow(-2, 31);
+    let max = Math.pow(2, 31) - 1;
+    let strX = x.toString();
+    let numArray = strX.split("");
+    let sign = "";
     if (numArray[0] == "-") {
         sign = numArray[0];
         numArray.splice(0, 1);
@@ -34,23 +34,32 @@ function reverse(x) {
 // console.log(reverse(x));
 //First Unique Character in a String
 function firstUniqChar(s) {
-    var charIndex = -1;
-    var lettersSet = new Map();
-    var arrayS = s.split("");
-    var uniqueChar = s[0];
-    for (var i = 0; i < arrayS.length; i++) {
-        if (lettersSet.get(arrayS[i])) {
-            var currentValue = lettersSet.get(arrayS[i]);
-            console.log(arrayS[i]);
-            console.log(currentValue);
+    let charIndex = -1;
+    let lettersMap = new Map();
+    let arrayS = s.split("");
+    console.log(arrayS);
+    for (let i = 0; i < arrayS.length; i++) {
+        if (lettersMap.get(arrayS[i])) {
+            let currentValue = lettersMap.get(arrayS[i]);
+            lettersMap.set(arrayS[i], currentValue + 1);
         }
         else {
-            lettersSet.set(arrayS[i], 1);
+            lettersMap.set(arrayS[i], 1);
         }
     }
-    console.log(lettersSet);
+    console.log(lettersMap);
+    let uniqueLetters = [];
+    lettersMap.forEach((value, index) => {
+        if (value == 1) {
+            uniqueLetters.push(index);
+        }
+    });
+    if (uniqueLetters.length > 1) {
+        let uniqueLetter = uniqueLetters[0];
+        charIndex = arrayS.indexOf(uniqueLetter);
+    }
     return charIndex;
 }
 ;
-var s = "aabb";
-firstUniqChar(s);
+let s = "z";
+console.log(firstUniqChar(s));
