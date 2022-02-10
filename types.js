@@ -107,5 +107,189 @@ function aclean(arr) {
     }
     return Array.from(setOfUniqueValues);
 }
-let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
-console.log(aclean(arr));
+// let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
+// console.log( aclean(arr) );
+//Перебираемые ключи
+let map = new Map();
+map.set("name", "John");
+let keys = [];
+for (let key of map.keys()) {
+    keys.push(key);
+}
+// Error: keys.push is not a function
+// Ошибка: keys.push -- это не функция
+keys.push("more");
+//Сумма свойств объекта
+let salaries = {
+    "John": 100,
+    "Pete": 300,
+    "Mary": 250
+};
+function sumSalaries(salaries) {
+    let result = 0;
+    if (salaries && typeof salaries === "object") {
+        let values = Object.values(salaries);
+        for (const key in values) {
+            result += values[key];
+        }
+    }
+    return result;
+}
+//console.log( sumSalaries(salaries) );
+//Подсчёт количества свойств объекта
+let user = {
+    name: 'John',
+    age: 30,
+    something1: false,
+    something2: null,
+    something3: undefined
+};
+function count(user) {
+    let result = 0;
+    if (user && typeof user === "object") {
+        result = Object.values(user).length;
+    }
+    return result;
+}
+let user2 = {
+    nameUser: "John",
+    years: 30,
+    isAdmin: false
+};
+let { nameUser, years: age, isAdmin = false } = user2;
+// console.log( nameUser );
+// console.log( age );
+// console.log( isAdmin );
+//Максимальная зарплата
+let salaries2 = {
+    "John": 100,
+    "Pete": 300,
+    "Mary": 250
+};
+function topSalary(salaries) {
+    let result = null;
+    if (salaries) {
+        let maxValue = 0;
+        for (let [key, value] of Object.entries(salaries)) {
+            if (value > maxValue) {
+                maxValue = value;
+                result = key;
+            }
+        }
+    }
+    return result;
+}
+//console.log(topSalary({}));
+//Создайте дату
+let date = new Date(2012, 1, 20);
+//console.log(date);
+//Покажите день недели
+let dateofWeek = new Date(2022, 1, 10);
+let dateofWeek2 = new Date(2022, 1, 13);
+let dateofWeek3 = new Date(2022, 1, 12);
+function getWeekDay(date) {
+    let result = "";
+    let days = ["ВС", "ПН", "ВТ", "СР", "ЧТ", "ПТ", "СБ"];
+    result = days[date.getDay()];
+    return result;
+}
+;
+//console.log( getWeekDay(dateofWeek) ); 
+//День недели в европейской нумерации
+function getLocalDay(date) {
+    let result;
+    if (date.getDay() === 0) {
+        result = 7;
+    }
+    else {
+        result = date.getDay();
+    }
+    return result;
+}
+// console.log( getLocalDay(dateofWeek) ); 
+// console.log( getLocalDay(dateofWeek2) ); 
+// console.log( getLocalDay(dateofWeek3) ); 
+//Какой день месяца был много дней назад?
+function getDateAgo(date, days) {
+    let result = new Date(date);
+    result.setDate(date.getDate() - days);
+    return result;
+}
+// console.log( getDateAgo(dateofWeek, 1) );
+// console.log( getDateAgo(dateofWeek, 2) );
+// console.log( getDateAgo(dateofWeek, 365) );
+function getLastDayOfMonth(year, month) {
+    let result;
+    let date = new Date(year, month + 1, 0);
+    result = date.getDate();
+    return result;
+}
+//console.log( getLastDayOfMonth(2022, 1) );
+//Сколько сегодня прошло секунд?
+function getSecondsToday() {
+    let date = new Date();
+    return date.getSeconds() + (date.getMinutes() * 60) + (date.getHours() * 3600);
+}
+//console.log(getSecondsToday());
+//Сколько секунд осталось до завтра?
+function getSecondsToTomorrow() {
+    let today = new Date();
+    let tomorrow = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 1);
+    let diff = tomorrow - today;
+    return Math.round(diff / 1000);
+}
+//console.log(getSecondsToTomorrow());
+//Форматирование относительной даты
+function formatDate(date) {
+    let now = new Date();
+    let diff = now - date;
+    let diffSeconds = Math.round(diff / 1000);
+    if (diffSeconds < 1) {
+        return "прямо сейчас";
+    }
+    else if (diffSeconds < 60) {
+        return diffSeconds + " сек. назад";
+    }
+    else if (diffSeconds < 3600) {
+        return diffSeconds / 60 + " мин. назад";
+    }
+    else {
+        return date.getDate() + "." + date.getMonth() + "." + date.getFullYear() + " " + date.getHours() + ":" + date.getMinutes();
+    }
+}
+let today = new Date();
+// console.log( formatDate(new Date(today - 1)) );
+// console.log( formatDate(new Date(today - 30 * 1000)) ); 
+// console.log( formatDate(new Date(today - 5 * 60 * 1000)) );
+// console.log( formatDate(new Date(today - 86400 * 1000)) );
+//Преобразуйте объект в JSON, а затем обратно в обычный объект
+let user3 = {
+    name: "Василий Иванович",
+    age: 35
+};
+let userDecode = JSON.parse(JSON.stringify(user3));
+//console.log(userDecode);
+//Исключить обратные ссылки
+let room = {
+    number: 23,
+    occupiedBy: null
+};
+let meetup = {
+    title: "Совещание",
+    occupiedBy: [{ name: "Иванов" }, { name: "Петров" }],
+    place: room,
+    self: null
+};
+// цикличные ссылки
+room.occupiedBy = meetup;
+meetup.self = meetup;
+console.log(JSON.stringify(meetup, function replacer(key, value) {
+    for (const [objKey, objValue] of Object.entries(value)) {
+        if (objKey != "" && objValue == meetup) {
+            return undefined;
+        }
+        else {
+            return objValue;
+        }
+    }
+}));
