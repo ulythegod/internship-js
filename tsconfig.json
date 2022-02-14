@@ -6,6 +6,8 @@
       "es2016",
       "DOM.Iterable",
       "ScriptHost"
-    ]
+    ],
+    "noImplicitAny": true,
+    "strictNullChecks": true
   }
 }

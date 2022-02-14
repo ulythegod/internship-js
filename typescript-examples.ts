@@ -104,3 +104,82 @@ function doSomething1(obj: SomeType) {
 
 let obj: SomeType = {prop: "test"};
 doSomething1(obj);
+
+//Index Signatures
+function getStringArray(): StringArray {
+  let arr: StringArray;
+
+  arr = ["ghdhgf", "eruieu", "ewer", "weiruteiut"];
+
+  return arr;
+};
+// ---cut---
+interface StringArray {
+  [index: number]: string;//index signature
+}
+
+const myArray: StringArray = getStringArray();
+const secondItem = myArray[1];
+//const secondItem: string
+
+console.log(myArray);
+console.log(secondItem);
+
+interface Animal {
+  name: string;
+}
+ 
+interface Dog extends Animal {
+  breed: string;
+}
+ 
+// Error: indexing with a numeric string might get you a completely separate type of Animal!
+interface Animal {
+  name: string;
+}
+ 
+interface Dog extends Animal {
+  breed: string;
+}
+ 
+// Error: indexing with a numeric string might get you a completely separate type of Animal!
+// interface NotOkay {
+//   [x: number]: Animal; //'number' index type 'Animal' is not assignable to 'string' index type 'Dog'.
+//   [x: string]: Dog;
+// }
+
+//Объяснение
+//смотри у тебя такой объект
+// const a = {
+//   42: new Cat(),
+//   '43': new Dog(),
+// }
+// т.к названия свойств объекта хранятся как строки, ты получишь такой объект
+// const a = {
+//   '42': new Cat(),
+//   '43': new Dog(),
+// }
+// при обращении к свойству, js приведет ключ, который ты используешь к строке
+// и ты можешь получать свойства по числу или строке, разницы нет
+// a['42'] instanceof Cat // true
+// a[42] instanceof Cat // true
+// Но ты указываешь тип NotOkay как объект у которого во всех свойствах типа 
+//строка находится объект класса собака, что не соответствует тому, что там может быть
+
+interface Okay {
+  [x: string]: Animal;
+}
+
+class Dogs implements Dog {
+  name: string;
+  breed: string;
+}
+
+let animal = new Dogs();
+
+const okay: Okay = {
+  "str": animal
+}
+
+console.log(okay);
+
