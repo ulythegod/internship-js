@@ -305,3 +305,27 @@ function printNumbersInterval(from: number, to: number) {
 }
 
 //printNumbersInterval(1, 10);
+
+//Декоратор-шпион
+function work(a: number, b: number) {
+    console.log( a + b ); // произвольная функция или метод
+}
+
+function spy(func: any) {
+    return function(a: number, b: number) {
+        func.calls.push(a + ", " + b);
+
+        let result = func(a, b);
+      
+        return result;
+    };
+}
+
+work = spy(work);
+
+work(1, 2); // 3
+work(4, 5); // 9
+
+for (let args of work.calls) {
+    alert( 'call:' + args.join() ); // "call:1,2", "call:4,5"
+}
