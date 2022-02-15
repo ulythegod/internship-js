@@ -146,8 +146,7 @@ function Counter() {
     };
 }
 
-let counter1 = new Counter();
-
+//let counter1 = new Counter();
 // console.log( counter1.up() );
 // console.log( counter1.up() );
 // console.log( counter1.down() ); 

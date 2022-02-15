@@ -36,9 +36,14 @@ let n: number = 99;
  */
 
  var solution = function(isBadVersion: any) {
+    console.log(isBadVersion);
+     
     return function(n: number): number {
         let left: number = 1;
         let right: number = n;
+
+        console.log(left);
+        console.log(right);        
 
         while (left < right) {
             let mid: number = left + (right - left) / 2;
@@ -52,3 +57,5 @@ let n: number = 99;
         return left;
     };
 };
+
+solution(4);

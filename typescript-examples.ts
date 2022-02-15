@@ -183,3 +183,22 @@ const okay: Okay = {
 
 console.log(okay);
 
+//Tuple Types
+function doSomething2(pair: [string, number]) {
+  const a = pair[0];
+  //    ^?
+  const b = pair[1];
+  //    ^?
+  console.log(pair)
+}
+
+doSomething2(["hello", 42]);
+
+//Generics
+function identity<Type>(arg: Type): Type {
+  return arg;
+}
+
+let output = identity<string>("myString");
+
+console.log(output);
