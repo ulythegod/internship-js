@@ -120,7 +120,7 @@ function Counter() {
         return --count;
     };
 }
-let counter1 = new Counter();
+//let counter1 = new Counter();
 // console.log( counter1.up() );
 // console.log( counter1.up() );
 // console.log( counter1.down() ); 
@@ -185,6 +185,62 @@ function makeArmy() {
     return shooters;
 }
 let army = makeArmy();
-army[0](); // у 0-го стрелка будет номер 10
-army[5](); // и у 5-го стрелка тоже будет номер 10
+// army[0](); // у 0-го стрелка будет номер 10
+// army[5](); // и у 5-го стрелка тоже будет номер 10
 // ... у всех стрелков будет номер 10, вместо 0, 1, 2, 3...
+//Установка и уменьшение значения счётчика
+function makeCounter1() {
+    function counter() {
+        return ++counter.count;
+    }
+    ;
+    counter.set = (value) => counter.count = value;
+    counter.decrease = () => {
+        return --counter.count;
+    };
+    counter.count = 0;
+    return counter;
+}
+// let counter1: any = makeCounter1();
+// console.log(counter1);
+// console.log(counter1());
+// console.log(counter1.decrease());
+// console.log(counter1.set(3));
+// console.log(counter1());
+// console.log(counter1.decrease());
+//Сумма с произвольным количеством скобок
+function sum1(x) {
+    function sum(b) {
+        sum.currentSum += b;
+        return sum;
+    }
+    sum.toString = function () {
+        return sum.currentSum;
+    };
+    sum.currentSum = x;
+    return sum;
+}
+// console.log(sum1(1)(2).toString());
+// console.log(sum1(1)(2)(3).toString());
+// console.log(sum1(5)(-1)(2).toString());
+// console.log(sum1(6)(-1)(-2)(-3).toString());
+// console.log(sum1(0)(1)(2)(3)(4)(5).toString());
+//Вывод каждую секунду
+function printNumbersTimeout(from, to) {
+    console.log(from);
+    if (from < to) {
+        setTimeout(printNumbersInterval, 1000, ++from, to);
+    }
+}
+//setTimeout(printNumbersInterval, 1000, 1, 10);
+function printNumbersInterval(from, to) {
+    let current = from;
+    setTimeout(function go() {
+        console.log(current);
+        if (current < to) {
+            setTimeout(go, 1000);
+        }
+        current++;
+    }, 1000);
+}
+printNumbersInterval(1, 10);

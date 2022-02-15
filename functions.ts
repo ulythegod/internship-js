@@ -227,6 +227,81 @@ function makeArmy(): any[] {
 
 let army = makeArmy();
 
-army[0](); // у 0-го стрелка будет номер 10
-army[5](); // и у 5-го стрелка тоже будет номер 10
+// army[0](); // у 0-го стрелка будет номер 10
+// army[5](); // и у 5-го стрелка тоже будет номер 10
 // ... у всех стрелков будет номер 10, вместо 0, 1, 2, 3...
+
+//Установка и уменьшение значения счётчика
+function makeCounter1() {  
+    function counter() {
+      return ++counter.count;
+    };
+
+    counter.set = (value: number) => counter.count = value;
+
+    counter.decrease = () => {
+        return --counter.count;
+    }
+  
+    counter.count = 0;
+  
+    return counter;
+}
+
+// let counter1: any = makeCounter1();
+// console.log(counter1);
+// console.log(counter1());
+// console.log(counter1.decrease());
+// console.log(counter1.set(3));
+// console.log(counter1());
+// console.log(counter1.decrease());
+
+//Сумма с произвольным количеством скобок
+function sum1(x: number): any {
+    function sum(b: number) {
+        sum.currentSum += b;
+        return sum;
+    }
+
+    sum.toString = function() {
+        return sum.currentSum;
+    };
+
+    sum.currentSum = x;
+
+    return sum;
+}
+
+// console.log(sum1(1)(2).toString());
+// console.log(sum1(1)(2)(3).toString());
+// console.log(sum1(5)(-1)(2).toString());
+// console.log(sum1(6)(-1)(-2)(-3).toString());
+// console.log(sum1(0)(1)(2)(3)(4)(5).toString());
+
+//Вывод каждую секунду
+function printNumbersTimeout(from: number, to: number) {
+    console.log(from);
+    
+    if (from < to) {
+        setTimeout(printNumbersInterval, 1000, ++from, to);
+    }
+}
+
+//setTimeout(printNumbersInterval, 1000, 1, 10);
+
+function printNumbersInterval(from: number, to: number) {
+    let current: number = from;
+    
+    setTimeout(
+        function go() {
+            console.log(current);
+            if (current < to) {
+              setTimeout(go, 1000);
+            }
+            current++;
+        }, 
+        1000
+    );    
+}
+
+//printNumbersInterval(1, 10);

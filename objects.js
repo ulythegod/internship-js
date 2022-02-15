@@ -3,13 +3,13 @@ let user = {};
 
 user.name = "Jonh";
 user.surname = "Smith";
-console.log(user);
+// console.log(user);
 
-user.name = "Pete";
-console.log(user);
+// user.name = "Pete";
+// console.log(user);
 
-delete user.name;
-console.log(user);
+// delete user.name;
+// console.log(user);
 
 //Проверка на пустоту
 function isEmpty(obj) {
@@ -24,10 +24,10 @@ function isEmpty(obj) {
 }
 
 let schedule = {};
-console.log( isEmpty(schedule) );
-schedule["8:30"] = "get up";
-console.log( isEmpty(schedule) );
-console.log( "" );
+// console.log( isEmpty(schedule) );
+// schedule["8:30"] = "get up";
+// console.log( isEmpty(schedule) );
+// console.log( "" );
 
 //Сумма свойств объекта
 let salaries = {
@@ -42,8 +42,8 @@ for (const key in salaries) {
     salariesRes += salaries[key];
 }
 
-console.log(salariesRes);
-console.log( "" );
+// console.log(salariesRes);
+// console.log( "" );
 
 //Умножаем все числовые свойства на 2
 function multiplyNumeric(obj) {
@@ -60,10 +60,10 @@ let menu = {
     title: "My menu"
 };
 
-console.log(menu);
-multiplyNumeric(menu);
-console.log(menu);
-console.log( "" );
+// console.log(menu);
+// multiplyNumeric(menu);
+// console.log(menu);
+// console.log( "" );
 
 //Создайте калькулятор
 let calculator = {
@@ -84,7 +84,7 @@ let calculator = {
 // calculator.read();
 // console.log( calculator.sum() );
 // console.log( calculator.mul() );
-console.log( "" );
+//console.log( "" );
 
 //Цепь вызовов
 let ladder = {
@@ -104,8 +104,8 @@ let ladder = {
     }
 };
 
-ladder.up().up().down().showStep();
-console.log( "" );
+// ladder.up().up().down().showStep();
+// console.log( "" );
 
 //Две функции - один объект
 let obj = {};
@@ -120,8 +120,8 @@ function B() {
 let a = new A;
 let b = new B;
 
-console.log( a == b );
-console.log( "" );
+// console.log( a == b );
+// console.log( "" );
 
 //Создание калькулятора при помощи конструктора
 function Calculator() {
@@ -161,8 +161,37 @@ function Accumulator(startingValue) {
 
 let accumulator = new Accumulator(1);
 
-accumulator.read();
-accumulator.read();
+// accumulator.read();
+// accumulator.read();
 
-console.log(accumulator.value);
-console.log( "" );
+// console.log(accumulator.value);
+// console.log( "" );
+
+//this примеры
+function f1(){
+    return this;
+  }
+  
+  // В браузере:
+  console.log(f1());
+
+  function f2(){
+    "use strict"; // см. strict mode
+    return this;
+  }
+
+  console.log(f2());
+
+var obj123 = {
+    a: 5,
+    read: function read() {
+        console.log(this);
+    },
+    readStrict: function readStrict() {
+        "use strict";
+        console.log(this);
+    },
+};
+
+obj123.read();
+obj123.readStrict();
