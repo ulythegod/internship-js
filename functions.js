@@ -243,4 +243,91 @@ function printNumbersInterval(from, to) {
         current++;
     }, 1000);
 }
-printNumbersInterval(1, 10);
+//printNumbersInterval(1, 10);
+//Декоратор-шпион
+let work = function (a, b) {
+    console.log(a + b); // произвольная функция или метод
+};
+function spy(func) {
+    function wrapper(...args) {
+        wrapper.calls.push(args);
+        return func.apply(this, arguments);
+    }
+    wrapper.calls = [];
+    return wrapper;
+}
+// work = spy(work);
+// work(1, 2); // 3
+// work(4, 5); // 9
+// for (let args of work.calls) {
+//     console.log( 'call:' + args.join() ); // "call:1,2", "call:4,5"
+// }
+//Задерживающий декоратор
+function f(x) {
+    console.log(x);
+}
+function delay(func, time) {
+    function wrapper(...args) {
+        return setTimeout(() => func.apply(this, arguments), time);
+    }
+    return wrapper;
+}
+// создаём обёртки
+let f1000 = delay(f, 1000);
+let f1500 = delay(f, 1500);
+// f1000("test1"); // показывает "test" после 1000 мс
+// f1500("test2");
+//Декоратор debounce
+function fDebounce(x) {
+    console.log(x);
+}
+function debounce(func, time) {
+    function wrapper(...args) {
+        if (!wrapper.isCooldown) {
+            wrapper.isCooldown = true;
+            return setTimeout(() => { wrapper.isCooldown = false; func.apply(this, arguments); }, time);
+        }
+        else {
+            return false;
+        }
+    }
+    wrapper.isCooldown = false;
+    return wrapper;
+}
+let f3 = debounce(fDebounce, 1000);
+// f3(1); // выполняется немедленно
+// f3(2);
+// setTimeout( () => f3(3), 100);
+// setTimeout( () => f3(4), 1100);
+// setTimeout( () => f3(5), 1500);
+//Тормозящий (throttling) декоратор
+function fThrottle(x) {
+    console.log(x);
+}
+function throttle(func, time) {
+    function wrapper(...args) {
+        if (wrapper.isCooldown) {
+            wrapper.this = this;
+            wrapper.savedArgs = arguments;
+            return false;
+        }
+        func.apply(this, arguments);
+        wrapper.isCooldown = true;
+        setTimeout(() => {
+            wrapper.isCooldown = false;
+            if (wrapper.savedArgs && wrapper.this) {
+                wrapper.apply(wrapper.this, wrapper.savedArgs);
+            }
+            wrapper.savedArgs = null;
+            wrapper.this = null;
+        }, time);
+    }
+    wrapper.isCooldown = false;
+    wrapper.savedArgs = null;
+    wrapper.this = null;
+    return wrapper;
+}
+let f4 = throttle(fThrottle, 1000);
+f4(1); // показывает 1
+f4(2); // (ограничение, 1000 мс ещё нет)
+f4(3);
