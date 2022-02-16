@@ -327,7 +327,40 @@ function throttle(func, time) {
     wrapper.this = null;
     return wrapper;
 }
-let f4 = throttle(fThrottle, 1000);
-f4(1); // показывает 1
-f4(2); // (ограничение, 1000 мс ещё нет)
-f4(3);
+// let f4 = throttle(fThrottle, 1000);
+// f4(1); // показывает 1
+// f4(2); // (ограничение, 1000 мс ещё нет)
+// f4(3);
+//Исправьте функцию, теряющую "this"
+function askPassword(ok, fail) {
+    let password = prompt("Password?", '');
+    if (password == "rockstar")
+        ok();
+    else
+        fail();
+}
+let user = {
+    name: 'Вася',
+    loginOk() {
+        alert(`${this.name} logged in`);
+    },
+    loginFail() {
+        alert(`${this.name} failed to log in`);
+    },
+};
+//askPassword(user.loginOk.bind(user), user.loginFail.bind(user));
+//Использование частично применённой функции для логина
+function askPassword1(ok, fail) {
+    let password = prompt("Password?", '');
+    if (password == "rockstar")
+        ok();
+    else
+        fail();
+}
+let user1 = {
+    name: 'John',
+    login(result) {
+        alert(this.name + (result ? ' logged in' : ' failed to log in'));
+    }
+};
+askPassword1(user1.login.bind(user1, true), user1.login.bind(user1, false));
