@@ -173,14 +173,14 @@ function f1(){
   }
   
   // В браузере:
-  console.log(f1());
+  //console.log(f1());
 
   function f2(){
     "use strict"; // см. strict mode
     return this;
   }
 
-  console.log(f2());
+  //console.log(f2());
 
 var obj123 = {
     a: 5,
@@ -193,5 +193,103 @@ var obj123 = {
     },
 };
 
-obj123.read();
-obj123.readStrict();
+// obj123.read();
+// obj123.readStrict();
+
+let user3 = {
+    name: "John",
+    surname: "Smith",
+  
+    get fullName() {
+      return `${this.name} ${this.surname}`;
+    },
+  
+    set fullName(value) {
+      [this.name, this.surname] = value.split(" ");
+    }
+  };
+  
+  // set fullName запустится с данным значением
+  user3.fullName = "Alice Cooper";
+  
+//   console.log(user3.name); // Alice
+//   console.log(user3.surname); // Cooper
+//   console.log(user3.fullName);
+
+//Алгоритм поиска
+let head = {
+    glasses: 1
+};
+
+let table = {
+    __proto__: head,
+    pen: 3
+};
+
+let bed = {
+    __proto__: table,
+    sheet: 1,
+    pillow: 2
+};
+
+let pockets = {
+    __proto__: bed,
+    money: 2000
+};
+
+// console.log(pockets.pen);
+// console.log(bed.glasses);
+// console.log(pockets.glasses);
+// console.log(head.glasses);
+// console.log(head);
+// console.log(pockets);
+
+//Куда будет произведена запись?
+let hamster = {
+    stomach: [],
+  
+    eat(food) {
+      this.stomach.push(food);
+    }
+  };
+  
+  let speedy = {
+    __proto__: hamster,
+    stomach: []
+  };
+  
+  let lazy = {
+    __proto__: hamster,
+    stomach: []
+  };
+  
+  // Этот хомяк нашёл еду
+  speedy.eat("apple");
+//   console.log( speedy.stomach ); // apple
+  
+//   // У этого хомяка тоже есть еда. Почему? Исправьте
+//   console.log( lazy.stomach ); 
+
+//Изменяем "prototype"
+function Rabbit() {}
+Rabbit.prototype = {
+  eats: true
+};
+
+let rabbit = new Rabbit();
+
+// console.log( rabbit.eats );
+
+// delete Rabbit.prototype.eats;
+
+// console.log( rabbit.eats );
+
+//Создайте новый объект с помощью уже существующего
+let objTest = {
+    constructor: String,
+};
+
+let obj2 = new objTest.constructor("dsfsd");
+
+// console.log(objTest);
+// console.log(obj2);

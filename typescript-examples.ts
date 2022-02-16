@@ -201,4 +201,6 @@ function identity<Type>(arg: Type): Type {
 
 let output = identity<string>("myString");
 
-console.log(output);
+// console.log(output);
+
+

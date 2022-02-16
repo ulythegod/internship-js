@@ -461,4 +461,4 @@ let user1 = {
   }
 };
 
-askPassword1(user1.login.bind(user1, true), user1.login.bind(user1, false)); 
+//askPassword1(user1.login.bind(user1, true), user1.login.bind(user1, false)); 
