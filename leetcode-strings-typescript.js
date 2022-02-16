@@ -37,7 +37,6 @@ function firstUniqChar(s) {
     let charIndex = -1;
     let lettersMap = new Map();
     let arrayS = s.split("");
-    console.log(arrayS);
     for (let i = 0; i < arrayS.length; i++) {
         if (lettersMap.get(arrayS[i])) {
             let currentValue = lettersMap.get(arrayS[i]);
@@ -47,19 +46,82 @@ function firstUniqChar(s) {
             lettersMap.set(arrayS[i], 1);
         }
     }
-    console.log(lettersMap);
     let uniqueLetters = [];
     lettersMap.forEach((value, index) => {
         if (value == 1) {
             uniqueLetters.push(index);
         }
     });
-    if (uniqueLetters.length > 1) {
+    if (uniqueLetters.length > 0) {
         let uniqueLetter = uniqueLetters[0];
         charIndex = arrayS.indexOf(uniqueLetter);
     }
     return charIndex;
 }
 ;
-let s = "z";
-console.log(firstUniqChar(s));
+let s = "leetcode";
+//console.log(firstUniqChar(s));
+//Valid Anagram
+function isAnagram(s, t) {
+    let result = false;
+    let sArr = s.split("");
+    let tArr = t.split("");
+    sArr.sort();
+    tArr.sort();
+    if (sArr.join("") == tArr.join("")) {
+        result = true;
+    }
+    return result;
+}
+;
+// console.log(isAnagram("anagram", "nagaram"));
+// console.log(isAnagram("rat", "car"));
+//Valid Palindrome
+function isPalindrome(s) {
+    let result = false;
+    const p = /[^a-zа-я0-9]+/g;
+    let sArr = s.split("");
+    let originalStr = sArr.join("").toLowerCase().replace(p, "");
+    let reversedStr = sArr.reverse().join("").toLowerCase().replace(p, "");
+    if (originalStr === reversedStr) {
+        result = true;
+    }
+    return result;
+}
+;
+//console.log(isPalindrome("A man, a plan, a canal: Panama"));
+// console.log(isPalindrome("race a car"));
+// console.log(isPalindrome(" "));
+//String to Integer (atoi)
+function myAtoi(s) {
+    let result = 0;
+    let isSign = s.includes("-");
+    result = +s.replace(/[^0-9]/g, "");
+    if (isSign) {
+        result *= -1;
+    }
+    return result;
+}
+;
+// console.log(myAtoi("42"));
+// console.log(myAtoi("   -42"));
+// console.log(myAtoi("4193 with words"));
+//Implement strStr()
+function strStr(haystack, needle) {
+    if (needle === "") {
+        return 0;
+    }
+    else {
+        let hasStr = haystack.includes(needle);
+        if (!hasStr) {
+            return -1;
+        }
+        else {
+            return haystack.indexOf(needle);
+        }
+    }
+}
+;
+console.log(strStr("hello", "ll"));
+console.log(strStr("aaaaa", "bba"));
+console.log(strStr("", ""));

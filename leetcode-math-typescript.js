@@ -51,13 +51,50 @@ function countPrimes(n) {
 //Power of Three
 function isPowerOfThree(n) {
     let result = false;
-    let logRes = Math.log(n) / Math.log(3);
-    let epsilon = 10;
-    result = (logRes + epsilon) % 1 <= 2 * epsilon;
+    if (n < 1) {
+        return result;
+    }
+    //let logRes = Math.log(n) / Math.log(3); //O(1)
+    while (n % 3 == 0) { //O(n)
+        n /= 3;
+    }
+    result = n === 1;
     return result;
 }
 ;
-console.log(isPowerOfThree(27));
-console.log(isPowerOfThree(0));
-console.log(isPowerOfThree(9));
-console.log(isPowerOfThree(45));
+// console.log(isPowerOfThree(27));
+// console.log(isPowerOfThree(0));
+// console.log(isPowerOfThree(9));
+// console.log(isPowerOfThree(45));
+//Roman to Integer
+function romanToInt(s) {
+    let result = 0;
+    let mappingNumbers = {
+        "I": 1,
+        "V": 5,
+        "X": 10,
+        "L": 50,
+        "C": 100,
+        "D": 500,
+        "M": 1000
+    };
+    let strArr = s.split("");
+    strArr.reverse();
+    let lastValue = "";
+    strArr.forEach((value, index) => {
+        console.log("index", index);
+        console.log("value", mappingNumbers[value], value);
+        console.log("lastValue", mappingNumbers[lastValue], lastValue);
+        console.log("result", result);
+        if (mappingNumbers[lastValue] > mappingNumbers[value]) {
+            result -= mappingNumbers[value];
+        }
+        else {
+            result += mappingNumbers[value];
+        }
+        lastValue = value;
+    });
+    return result;
+}
+;
+console.log(romanToInt("MCMXCIV"));

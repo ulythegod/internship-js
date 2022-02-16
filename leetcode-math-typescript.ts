@@ -57,14 +57,53 @@ function countPrimes(n: number): number {
 function isPowerOfThree(n: number): boolean {
     let result: boolean = false;
 
-    let logRes = Math.log(n) / Math.log(3);
-    let epsilon = 10;
-    result = (logRes + epsilon) % 1 <= 2 * epsilon; 
+    if (n < 1) {
+        return result;
+    }
+
+    //let logRes = Math.log(n) / Math.log(3); //O(1)
+    while (n % 3 == 0) {//O(n)
+        n /= 3;
+    }
+    
+    result = n === 1;
 
     return result;
 };
 
-console.log(isPowerOfThree(27));
-console.log(isPowerOfThree(0));
-console.log(isPowerOfThree(9));
-console.log(isPowerOfThree(45));
+// console.log(isPowerOfThree(27));
+// console.log(isPowerOfThree(0));
+// console.log(isPowerOfThree(9));
+// console.log(isPowerOfThree(45));
+
+//Roman to Integer
+function romanToInt(s: string): number {
+    let result: number = 0;
+
+    let mappingNumbers: object = {
+        "I": 1,
+        "V": 5,
+        "X": 10,
+        "L": 50,
+        "C": 100,
+        "D": 500,
+        "M": 1000
+    };
+
+    let strArr: string[] = s.split("");
+    strArr.reverse();
+
+    let lastValue: string = "";
+    strArr.forEach((value, index) => {        
+        if (mappingNumbers[lastValue] > mappingNumbers[value]) {
+            result -= mappingNumbers[value];
+        } else {
+            result += mappingNumbers[value];
+        }
+        lastValue = value;
+    });   
+
+    return result;
+};
+
+console.log(romanToInt("MCMXCIV"));
