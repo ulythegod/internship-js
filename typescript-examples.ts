@@ -1,3 +1,6 @@
+import { pi as π } from "./typescript-math-module.js";
+import { squareTwo, phi, absolute } from "./typescript-math-module.js";
+
 //Call signatures
 type DescribableFunction = {
     description: string,
@@ -102,8 +105,8 @@ function doSomething1(obj: SomeType) {
   //obj.prop = "hello";
 }
 
-let obj: SomeType = {prop: "test"};
-doSomething1(obj);
+let obj4: SomeType = {prop: "test"};
+doSomething1(obj4);
 
 //Index Signatures
 function getStringArray(): StringArray {
@@ -203,4 +206,102 @@ let output = identity<string>("myString");
 
 // console.log(output);
 
+//static Blocks in Classes
+function loadLastInstances(): any[] {
+  let res: any[] = [];
+  
+  res[0] = new Foo();
+  res[1] = new Foo();
+  res[2] = new Foo();
+  res[3] = new Foo();
+
+  return res;
+}
+// ---cut---
+class Foo {
+  static #count = 0;
+
+  get count() {
+      return Foo.#count;
+  }
+
+  static {
+      try {
+          const lastInstances = loadLastInstances();
+          Foo.#count += lastInstances.length;
+      }
+      catch {}
+  }
+}
+
+let foo1: Foo = new Foo();
+console.log(foo1.count);
+
+//Generic Classes
+class Box<Type> {
+  contents: Type;
+  constructor(value: Type) {
+    this.contents = value;
+  }
+}
+
+const bHello = new Box("hello!");
+const b2 = new Box(2);
+
+console.log(bHello);
+console.log(b2);
+
+//this parameters
+class MyClass {
+  name = "MyClass";
+  getName(this: MyClass) {
+    return this.name;
+  }
+}
+const c = new MyClass();
+// OK
+console.log(c.getName());
+
+// Error, would crash
+// const g = c.getName;
+// console.log(g());
+
+//Parameter Properties
+class Params {
+  constructor(
+    public readonly x: number,
+    protected y: number,
+    private z: number
+  ) {
+    // No body necessary
+  }
+}
+const a1 = new Params(1, 2, 3);
+console.log(a1.x);
+console.log(a1);
+//console.log(a.z);
+
+//abstract Classes and Members
+abstract class Base {
+  abstract getName(): string;
+
+  printName() {
+    console.log("Hello, " + this.getName());
+  }
+}
+
+class UnderBase extends Base {
+  name: string = "Alice";
+
+  getName(): string {
+    return this.name;
+  }
+}
+
+const b3 = new UnderBase();
+b3.printName();
+
+//modules
+console.log(π);
+console.log(absolute(12));
 
