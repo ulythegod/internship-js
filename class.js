@@ -79,11 +79,25 @@ class PowerArray extends Array {
         return this.length === 0;
     }
 }
-let arr2 = new PowerArray(1, 2, 5, 10, 50);
-console.log(arr2);
-console.log(arr2.isEmpty());
-let arr3 = new PowerArray();
-console.log(arr3);
-console.log(arr3.isEmpty());
-console.log(arr2 instanceof Array);
-console.log(arr2 instanceof PowerArray);
+// let arr2 = new PowerArray(1, 2, 5, 10, 50);
+// console.log(arr2);
+// console.log(arr2.isEmpty());
+// let arr3 = new PowerArray();
+// console.log(arr3);
+// console.log(arr3.isEmpty());
+// console.log(arr2 instanceof Array);
+// console.log(arr2 instanceof PowerArray);
+//Наследование от SyntaxError
+class FormatError extends SyntaxError {
+    constructor(message) {
+        super(message);
+        this.name = "";
+        this.name = "FormatError";
+    }
+}
+let err = new FormatError("ошибка форматирования");
+console.log(err.message); // ошибка форматирования
+console.log(err.name); // FormatError
+console.log(err.stack); // stack
+console.log(err instanceof FormatError); // true
+console.log(err instanceof SyntaxError); // true
