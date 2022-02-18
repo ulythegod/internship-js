@@ -6,12 +6,13 @@ class TreeNode {
     }
 }
 let tree = null;
-let arr1 = [2, 1, 3];
+let arr1 = [1, 2, 3];
 tree = createTree(arr1, tree, 0);
 inOrder(tree);
 //let depth: number = maxDepth(tree);
 //console.log(depth);
-console.log(isValidBST(tree));
+//console.log(isValidBST(tree));
+console.log(isSymmetric(tree));
 function createTree(values, tree, i) {
     if (values.length > 0) {
         if (i < values.length) {
@@ -62,5 +63,30 @@ function validate(root, low, high) {
 }
 function isValidBST(root) {
     return validate(root, null, null);
+}
+;
+function isMirror(node1, node2) {
+    let result = false;
+    if (node1 === null && node2 === null) {
+        result = true;
+        return result;
+    }
+    if (node1 !== null && node2 !== null && node1.val === node2.val) {
+        return isMirror(node1.left, node2.right) && isMirror(node1.right, node2.left);
+    }
+    return result;
+}
+function isSymmetric(root) {
+    if (root) {
+        if (root.left === null && root.right === null) {
+            return true;
+        }
+        else {
+            return isMirror(root.left, root.right);
+        }
+    }
+    else {
+        return true;
+    }
 }
 ;

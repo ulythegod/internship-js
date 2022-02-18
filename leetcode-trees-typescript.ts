@@ -10,12 +10,13 @@ class TreeNode {
 }
 
 let tree: TreeNode | null = null;
-let arr1: Array<number | null> = [2, 1, 3];
+let arr1: Array<number | null> = [1, 2, 3];
 tree = createTree(arr1, tree, 0);
 inOrder(tree);
 //let depth: number = maxDepth(tree);
 //console.log(depth);
-console.log(isValidBST(tree));
+//console.log(isValidBST(tree));
+console.log(isSymmetric(tree));
 
 function createTree(values: Array<number | null>, tree: TreeNode | null, i: number): TreeNode | null {//Array<number | null> - generic тип
     if (values.length > 0) {
@@ -76,4 +77,31 @@ function validate(root: TreeNode | null, low: number | null, high: number | null
 
 function isValidBST(root: TreeNode | null): boolean {
     return validate(root, null, null);
+};
+
+function isMirror(node1: TreeNode | null, node2: TreeNode | null): boolean {
+    let result: boolean = false;
+
+    if (node1 === null && node2 === null) {
+        result = true;
+        return result;
+    }   
+
+    if (node1 !== null && node2 !== null && node1.val === node2.val) {
+        return isMirror(node1.left, node2.right) && isMirror(node1.right, node2.left);
+    } 
+
+    return result;
+}
+
+function isSymmetric(root: TreeNode | null): boolean {
+    if (root) {
+        if (root.left === null && root.right === null) {
+            return true;
+        } else {
+            return isMirror(root.left, root.right);
+        }
+    } else {
+        return true;
+    }    
 };
