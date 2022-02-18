@@ -41,10 +41,10 @@ function delay(ms: number): any {
 //delay(3000).then(() => console.log('выполнилось через 3 секунды'));
 
 //Анимация круга с помощью промиса
-showCircle1(150, 150, 100).then(div => {
-    div.classList.add('message-ball');
-    div.append("Hello, world!");
-});
+// showCircle1(150, 150, 100).then(div => {
+//     div.classList.add('message-ball');
+//     div.append("Hello, world!");
+// });
 
 function showCircle1(cx: number, cy: number, radius: number): any {    
     let div: any = document.createElement('div');    
@@ -70,3 +70,71 @@ function showCircle1(cx: number, cy: number, radius: number): any {
 
     return promise;
 }
+
+//Перепишите, используя async/await
+async function loadJson(url: string): Promise<number> {
+    let result = await fetch(url);
+    
+    if (result.status == 200) {
+        return result.json();
+    } else {
+        throw new Error("Status: " + result.status);
+    }
+}
+
+// loadJson('no-such-user.json')
+//   .catch(alert);
+
+//Перепишите, используя async/await
+class HttpError extends Error {
+    response: any;
+
+    constructor(response: any) {
+        super(`${response.status} for ${response.url}`);
+        this.name = 'HttpError';
+        this.response = response;
+    }
+}
+
+async function loadJson2(url: string): Promise<any> {
+    let result: any = await fetch(url);
+    
+    if (result.status == 200) {
+        return result.json();
+    } else {
+        throw new Error("Status: " + result.status);
+    }
+}
+
+// Запрашивать логин, пока github не вернёт существующего пользователя.
+async function demoGithubUser() {
+    let name: any = prompt("Введите логин?", "iliakan");
+    let result: any;
+
+    try {
+        result = await loadJson2(`https://api.github.com/users/${name}`);
+    } catch(err) {
+      if (err instanceof HttpError && err.response.status == 404) {
+        console.log("Такого пользователя не существует, пожалуйста, повторите ввод.");
+      } else {
+        throw err;
+      }
+    }
+
+    console.log(`Полное имя: ${result.name}.`);
+}
+
+//demoGithubUser();
+
+//Вызовите async–функцию из "обычной"
+async function wait(): Promise<number> {
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    return 10;
+}
+
+function f() {
+    wait().then(answer => console.log(answer));
+}
+
+f();
