@@ -70,7 +70,7 @@ function addTwoNumbers1(l1, l2) {
         console.log("values", values);
         var resNum = 0;
         for (var i_1 = 0; i_1 < values.length; i_1++) {
-            resNum += Number(values[i_1].toPrecision(31));
+            resNum += values[i_1];
         }
         var resNumArr = resNum.toString().split('').map(function (int) { return parseInt(int); }).reverse();
         res = createList1(resNumArr);
