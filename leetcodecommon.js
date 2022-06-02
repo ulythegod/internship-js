@@ -43,16 +43,76 @@
 // console.log(findMedianSortedArrays([1,3], [2,7]));
 // console.log(findMedianSortedArrays([3], [-2, -1]));
 //Palindrome Number
-function isPalindrome(x) {
-    var res = false;
-    console.log(x.toString());
-    console.log(x.toString().split("").reverse().join());
-    if (x.toString() === x.toString().split("").reverse().join("")) {
-        res = true;
-    }
-    return res;
-}
-;
-console.log(isPalindrome(121));
+// function isPalindrome(x: number): boolean {
+//     let res: boolean = false; 
+//     if (x.toString() === x.toString().split("").reverse().join("")) {
+//         res = true;
+//     }
+//     return res;
+// };
+// console.log(isPalindrome(121));
 //console.log(isPalindrome(-121));
 //console.log(isPalindrome(10));
+//Regular Expression Matching
+// function isMatch(s: string, p: string): boolean {
+//     let res: boolean = false;
+//     let str: string[] = s.split("");
+//     if (!str.includes(".") && !str.includes("*") && s === p) {
+//         res = true;
+//     } else if (!str.includes(".") && str.includes("*")) {
+//         let index = str.indexOf('*');
+//         str.splice(index);
+//         res = true;
+//         for (let i = 0; i < str.length; i++) {
+//             if (p !== str[i]) {
+//                 res = false;
+//             }
+//         }
+//     }
+//     return res;
+// };
+//Divide Two Integers
+// function divide(dividend: number, divisor: number): number {
+//     let result: number = 0;
+//     let signDividend: number = (dividend < 0) ? -1 : 1; 
+//     let signDivisor: number = (divisor < 0) ? -1 : 1;
+//     dividend = Math.abs(dividend);
+//     divisor = Math.abs(divisor);
+//     let quotient = 0;
+//     while (dividend >= divisor) { 
+//         dividend -= divisor;
+//         ++quotient;
+//     } 
+//     console.log(quotient);    
+//     return result;
+// };
+// divide(7, -3);
+//Valid Parentheses
+function searchInsert(nums, target) {
+    if (nums.includes(target)) {
+        for (var i = 0; i < nums.length; i++) {
+            if (nums[i] === target) {
+                return i;
+            }
+        }
+    }
+    else {
+        if (nums[nums.length - 1] < target) {
+            return nums.length;
+        }
+        if (nums[0] > target) {
+            return 0;
+        }
+        for (var i = 0; i < nums.length; i++) {
+            if (target > nums[i] && target < nums[i + 1]) {
+                return (i + 1);
+            }
+        }
+    }
+}
+;
+var nums = [1, 3, 5, 6];
+var target = 5;
+console.log(searchInsert(nums, target));
+console.log(searchInsert([1, 3, 5, 6], 2));
+console.log(searchInsert([1, 3, 5, 6], 7));
