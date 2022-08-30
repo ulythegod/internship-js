@@ -1,6 +1,8 @@
+"use strict";
 //Two Sum
 // function twoSum(nums: number[], target: number): number[] {
 //     let result: number[] = [];
+//exports.__esModule = true;
 //     let firstId: number = 0;
 //     let secondId: number = 0;
 //     for (let i = 0; i < nums.length; i++) {
@@ -87,7 +89,7 @@
 //     return result;
 // };
 // divide(7, -3);
-//Valid Parentheses
+//Insert positions
 function searchInsert(nums, target) {
     if (nums.includes(target)) {
         for (var i = 0; i < nums.length; i++) {
@@ -116,3 +118,43 @@ var target = 5;
 console.log(searchInsert(nums, target));
 console.log(searchInsert([1, 3, 5, 6], 2));
 console.log(searchInsert([1, 3, 5, 6], 7));
+//Majority Element
+// console.log("majority Element");
+// function majorityElement(nums: number[]): number {
+//     let result: number = 0;
+//     let numbersCount: Map<number, number> = new Map();
+//     for (let i = 0; i < nums.length; i++) {
+//         if (numbersCount.has(nums[i])) {
+//             let currentCount = numbersCount.get(nums[i]);
+//             numbersCount.set(nums[i], Number(currentCount) + 1);
+//         } else {
+//             numbersCount.set(nums[i], 1);
+//         }
+//     }
+//     numbersCount.forEach((value: number, key: number) => {
+//         if ()
+//     });    
+//     return result;
+// };
+// majorityElement([3,2,3]);
+//Longest Common Prefix
+console.log("Longest Common Prefix");
+function longestCommonPrefix(strs) {
+    var result = "";
+    if (strs.length > 0) {
+        result = strs[0];
+        for (var i = 0; i < strs.length; i++) {
+            while (strs[i].indexOf(result) !== 0) {
+                result = result.substring(0, (result.length - 1));
+                if (result.length === 0) {
+                    return result;
+                }
+            }
+        }
+        ;
+    }
+    return result;
+}
+;
+console.log(longestCommonPrefix(["flower", "flow", "flight"]));
+console.log(longestCommonPrefix(["dog", "racecar", "car"]));
