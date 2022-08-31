@@ -196,57 +196,91 @@ console.log(searchInsert([1,3,5,6], 7));
 // console.log(longestCommonPrefix(["flower", "flow", "flight"]));
 // console.log(longestCommonPrefix(["dog","racecar","car"]));
 
-console.log("Valid Parentheses");
-function isValid(s: string): boolean {
-    let res = false;
+// console.log("Valid Parentheses");
+// function isValid(s: string): boolean {
+//     let res = true;
+//     const opennings: string[] = [];
 
-    let openBracket = s[0];
+//     for (let i = 0; i < s.length; i++) {
+//         if (s[i] === "(" || s[i] === "{" || s[i] === "[") {
+//             opennings.push(s[i]);
+//         } else if (s[i] === ")" || s[i] === "}" || s[i] === "]") {
+//             switch (s[i]) {
+//                 case ")":
+//                     if (opennings[opennings.length - 1] === "(") {
+//                         opennings.splice((opennings.length - 1), 1);
+//                     } else {
+//                         res = false;
+//                         return res;
+//                     }
+//                     break;            
+//                 case "}":
+//                     if (opennings[opennings.length - 1] === "{") {
+//                         opennings.splice((opennings.length - 1), 1);
+//                     } else {
+//                         res = false;
+//                         return res;
+//                     }
+//                     break;            
+//                 case "]":
+//                     if (opennings[opennings.length - 1] === "[") {
+//                         opennings.splice((opennings.length - 1), 1);
+//                     } else {
+//                         res = false;
+//                         return res;
+//                     }
+//                     break;            
+//                 default:
+//                     break;
+//             }
+//         }       
+//     }
 
-    if (openBracket === "(" || openBracket === "{" || openBracket === "[") {
-        for (let i = 0; i < s.length; i++) {
-            console.log("i", i, "openBracket", openBracket, "s[i]", s[i]);
-            if (i === (s.length - 1)) {
-                if (openBracket === "(" || openBracket === "{" || openBracket === "[") {
-                    return res;
-                }                
-            }
-            if (openBracket === s[i]) {
-                i += 1;
-                console.log("inside i", i, "openBracket", openBracket, "s[i]", s[i]);
-                switch (openBracket) {
-                    case "(":
-                        if (s[i] !== ")") {
-                           return res; 
-                        }
-                        break;
-                    case "{":
-                        if (s[i] !== "}") {
-                           return res; 
-                        }
-                        break;                
-                    case "[":
-                        console.log("????", s[i]);
-                        
-                        if (s[i] !== "]") {
-                           return res; 
-                        }
-                        break;                
-                    default:
-                        break;
-                }
-                
-                i += 1;
-                console.log("inside i", i, "s[i]", s[i]);
-                openBracket = s[i];
-            } else {
-                openBracket = s[i];
-            }
-        }
-        
-        res = true;
-    }
+//     if (opennings.length > 0) {
+//         res = false;
+//         return res;
+//     }
+
+//     return res;
+// };
+
+// console.log(isValid("()"));
+// console.log(isValid("()[]{}"));
+// console.log(isValid("(]"));
+// console.log(isValid("{[]}"));
+
+// console.log("Length of Last Word");
+// function lengthOfLastWord(s: string): number {
+//     let res: number = 0;
+
+//     let words = s.split(' ');
+
+//     words = words.filter(word => (word.length > 0));
+    
+//     res = words[words.length - 1].length;
+
+//     return res;
+// };
+
+// console.log(lengthOfLastWord("   fly me   to   the moon  "));
+// //console.log(lengthOfLastWord("Hello World"));
+// //console.log(lengthOfLastWord("luffy is still joyboy"));
+
+console.log("Plus One");
+function plusOne(digits: number[]): number[] {
+    const resString = String(Number(digits.join('')) + 1).split('');
+    const res:number[] = [];
+    
+    console.log(resString, (BigInt(digits.join('')) + BigInt(1)), digits.join(''), BigInt(digits.join('')));    
+
+    resString.forEach(element => {        
+        res.push(Number(element))
+    });
 
     return res;
 };
 
-console.log(isValid("()[]{}"));
+console.log(plusOne([6,1,4,5,3,9,0,1,9,5,1,8,6,7,0,5,5,4,3]));
+// console.log(plusOne([4,3,2,1]));
+// console.log(plusOne([9]));
+
