@@ -215,17 +215,23 @@ console.log(searchInsert([1, 3, 5, 6], 7));
 // console.log(lengthOfLastWord("   fly me   to   the moon  "));
 // //console.log(lengthOfLastWord("Hello World"));
 // //console.log(lengthOfLastWord("luffy is still joyboy"));
-console.log("Plus One");
-function plusOne(digits) {
-    var resString = String(Number(digits.join('')) + 1).split('');
-    var res = [];
-    console.log(resString, (BigInt(digits.join('')) + BigInt(1)), digits.join(''), BigInt(digits.join('')));
-    resString.forEach(function (element) {
-        res.push(Number(element));
-    });
+// console.log("Plus One");
+// function plusOne(digits: number[]): number[] {
+//     const resString = String(BigInt(digits.join('')) + BigInt(1)).split('');
+//     const res:number[] = [];    
+//     resString.forEach(element => {        
+//         res.push(Number(element))
+//     });
+//     return res;
+// };
+// console.log(plusOne([6,1,4,5,3,9,0,1,9,5,1,8,6,7,0,5,5,4,3]));
+// console.log(plusOne([4,3,2,1]));
+// console.log(plusOne([9]));
+console.log("Add Binary");
+function addBinary(a, b) {
+    var res = ((parseInt(a, 2) + parseInt(b, 2))).toString(2);
     return res;
 }
 ;
-console.log(plusOne([6, 1, 4, 5, 3, 9, 0, 1, 9, 5, 1, 8, 6, 7, 0, 5, 5, 4, 3]));
-// console.log(plusOne([4,3,2,1]));
-// console.log(plusOne([9]));
+console.log(addBinary("11", "1"));
+console.log(addBinary("1010", "1011"));
