@@ -204,8 +204,15 @@ function isValid(s: string): boolean {
 
     if (openBracket === "(" || openBracket === "{" || openBracket === "[") {
         for (let i = 0; i < s.length; i++) {
+            console.log("i", i, "openBracket", openBracket, "s[i]", s[i]);
+            if (i === (s.length - 1)) {
+                if (openBracket === "(" || openBracket === "{" || openBracket === "[") {
+                    return res;
+                }                
+            }
             if (openBracket === s[i]) {
                 i += 1;
+                console.log("inside i", i, "openBracket", openBracket, "s[i]", s[i]);
                 switch (openBracket) {
                     case "(":
                         if (s[i] !== ")") {
@@ -218,6 +225,8 @@ function isValid(s: string): boolean {
                         }
                         break;                
                     case "[":
+                        console.log("????", s[i]);
+                        
                         if (s[i] !== "]") {
                            return res; 
                         }
@@ -225,6 +234,10 @@ function isValid(s: string): boolean {
                     default:
                         break;
                 }
+                
+                i += 1;
+                console.log("inside i", i, "s[i]", s[i]);
+                openBracket = s[i];
             } else {
                 openBracket = s[i];
             }
@@ -236,4 +249,4 @@ function isValid(s: string): boolean {
     return res;
 };
 
-isValid("()[]{}");
+console.log(isValid("()[]{}"));

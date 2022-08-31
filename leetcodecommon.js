@@ -138,23 +138,70 @@ console.log(searchInsert([1, 3, 5, 6], 7));
 // };
 // majorityElement([3,2,3]);
 //Longest Common Prefix
-console.log("Longest Common Prefix");
-function longestCommonPrefix(strs) {
-    var result = "";
-    if (strs.length > 0) {
-        result = strs[0];
-        for (var i = 0; i < strs.length; i++) {
-            while (strs[i].indexOf(result) !== 0) {
-                result = result.substring(0, (result.length - 1));
-                if (result.length === 0) {
-                    return result;
+// console.log("Longest Common Prefix");
+// function longestCommonPrefix(strs: string[]): string {
+//     let result: string = "";
+//     if (strs.length > 0) {
+//         result = strs[0];
+//         for(let i = 0; i < strs.length; i++) {
+//             while (strs[i].indexOf(result) !== 0) {
+//                 result = result.substring(0, (result.length - 1));
+//                 if (result.length === 0) {
+//                     return result;
+//                 }
+//             }
+//         };
+//     }  
+//     return result;
+// };
+// console.log(longestCommonPrefix(["flower", "flow", "flight"]));
+// console.log(longestCommonPrefix(["dog","racecar","car"]));
+console.log("Valid Parentheses");
+function isValid(s) {
+    var res = false;
+    var openBracket = s[0];
+    if (openBracket === "(" || openBracket === "{" || openBracket === "[") {
+        for (var i = 0; i < s.length; i++) {
+            console.log("i", i, "openBracket", openBracket, "s[i]", s[i]);
+            if (i === (s.length - 1)) {
+                if (openBracket === "(" || openBracket === "{" || openBracket === "[") {
+                    return res;
                 }
             }
+            if (openBracket === s[i]) {
+                i += 1;
+                console.log("inside i", i, "openBracket", openBracket, "s[i]", s[i]);
+                switch (openBracket) {
+                    case "(":
+                        if (s[i] !== ")") {
+                            return res;
+                        }
+                        break;
+                    case "{":
+                        if (s[i] !== "}") {
+                            return res;
+                        }
+                        break;
+                    case "[":
+                        console.log("????", s[i]);
+                        if (s[i] !== "]") {
+                            return res;
+                        }
+                        break;
+                    default:
+                        break;
+                }
+                i += 1;
+                console.log("inside i", i, "s[i]", s[i]);
+                openBracket = s[i];
+            }
+            else {
+                openBracket = s[i];
+            }
         }
-        ;
+        res = true;
     }
-    return result;
+    return res;
 }
 ;
-console.log(longestCommonPrefix(["flower", "flow", "flight"]));
-console.log(longestCommonPrefix(["dog", "racecar", "car"]));
+console.log(isValid("()[]{}"));
