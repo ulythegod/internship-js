@@ -227,11 +227,22 @@ console.log(searchInsert([1, 3, 5, 6], 7));
 // console.log(plusOne([6,1,4,5,3,9,0,1,9,5,1,8,6,7,0,5,5,4,3]));
 // console.log(plusOne([4,3,2,1]));
 // console.log(plusOne([9]));
-console.log("Add Binary");
-function addBinary(a, b) {
-    var res = ((parseInt(a, 2) + parseInt(b, 2))).toString(2);
+// console.log("Add Binary");
+// function addBinary(a: string, b: string): string {
+//     const res: string = ((parseInt(a, 2) + parseInt(b, 2))).toString(2);
+//     return res;
+// };
+// console.log(addBinary("11", "1"));
+// console.log(addBinary("1010", "1011"));
+console.log("Sqrt(x)");
+function mySqrt(x) {
+    var res = x;
+    var root = 2;
+    while (res > root) {
+        res = res / root;
+    }
+    console.log(res);
     return res;
 }
 ;
-console.log(addBinary("11", "1"));
-console.log(addBinary("1010", "1011"));
+mySqrt(9);
