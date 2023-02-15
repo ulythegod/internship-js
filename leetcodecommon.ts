@@ -292,17 +292,294 @@ console.log(searchInsert([1,3,5,6], 7));
 // console.log(addBinary("11", "1"));
 // console.log(addBinary("1010", "1011"));
 
-console.log("Sqrt(x)");
-function mySqrt(x: number): number {
-    let res: number = x;
-    const root = 2;
+// console.log("Sqrt(x)");
+// function mySqrt(x: number): number {
+//     let root: number = 0;
 
-    while (res > root) {
-        res = res/root;
-    } 
+//     while (root * root <= x) {
+//         root++;
+//     } 
 
-    console.log(res);
+//     console.log(root);
     
-    return res;
+//     return root - 1;
+// };
+
+// mySqrt(9);
+
+// console.log("Remove Duplicates from Sorted List");
+// class ListNode {
+//     val: number
+//     next: ListNode | null
+//     constructor(val?: number, next?: ListNode | null) {
+//         this.val = (val===undefined ? 0 : val)
+//         this.next = (next===undefined ? null : next)
+//     }
+// }
+
+// let valuesArray: number[] = [1, 1, 2];
+// let list: ListNode | null = createList(valuesArray);
+
+// function createList(values: number[]): ListNode | null {
+//     let currentCreatedNode: ListNode | null = null;
+
+//     if (values.length > 0) {
+//         for (let i = values.length - 1; i >= 0; i--) {
+//             if (i === values.length - 1) {
+//                 currentCreatedNode = new ListNode(values[i], undefined);
+//             } else {
+//                 currentCreatedNode = new ListNode(values[i], currentCreatedNode);
+//             }
+//         }
+//     }
+
+//     return currentCreatedNode;
+// }
+
+// function deleteDuplicates(head: ListNode | null): ListNode | null {
+//     const withoudDuplicates: number[] = [];
+
+//     while (head) {
+//         if (!withoudDuplicates.includes(head.val)) {
+//             withoudDuplicates.push(head.val);            
+//         }
+//         head = head.next;
+//     }
+
+//     let list: ListNode | null = createList(withoudDuplicates);
+
+//     return list;
+// };
+
+// deleteDuplicates(list);
+
+// console.log("Binary Tree Inorder Traversal");
+
+// class TreeNode {
+//     val: number
+//     left: TreeNode | null
+//     right: TreeNode | null
+//     constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) {
+//         this.val = (val===undefined ? 0 : val)
+//         this.left = (left===undefined ? null : left)
+//         this.right = (right===undefined ? null : right)
+//     }
+// }
+
+// let tree: TreeNode | null = null;
+// let arr: Array<number | null> = [1, null, 2, 3];
+// tree = createTree(arr, tree, 0);
+
+// function createTree(values: Array<number | null>, tree: TreeNode | null, i: number): TreeNode | null {
+//     if (values.length > 0) {
+//         if (i < values.length) {
+//             let temp: TreeNode | null = null;
+//             if (values[i] !== null && typeof values[i] === "number") {
+//                 temp = new TreeNode(Number(values[i]));
+//             }
+
+//             if (temp) {
+//                 tree = temp;
+//                 tree.left = createTree(values, tree.left, 2 * i + 1);
+//                 tree.right = createTree(values, tree.right, 2 * i + 2); 
+//             }            
+//         }
+//     }
+
+//     return tree;
+// }
+
+// function inOrder(root: TreeNode | null, result: any[]): void {
+//     if (root != null) {
+//         inOrder(root.left, result);       
+//         result.push(root.val);       
+//         inOrder(root.right, result);               
+//     }
+// }
+   
+// function inorderTraversal(root: TreeNode | null): number[] {
+//     const result: any[] = [];
+
+//     inOrder(root, result);  
+
+//     return result;
+// };
+
+// inorderTraversal(tree);
+
+// console.log("Excel Sheet Column Title");
+
+// function convertToTitle(columnNumber: number): string {
+//     let res = "";
+
+//     const titlesMap = new Map();
+//     titlesMap.set(1, "A");
+//     titlesMap.set(2, "B");
+//     titlesMap.set(3, "C");
+//     titlesMap.set(4, "D");
+//     titlesMap.set(5, "E");
+//     titlesMap.set(6, "F");
+//     titlesMap.set(7, "G");
+//     titlesMap.set(8, "H");
+//     titlesMap.set(9, "I");
+//     titlesMap.set(10, "J");
+//     titlesMap.set(11, "K");
+//     titlesMap.set(12, "L");
+//     titlesMap.set(13, "M");
+//     titlesMap.set(14, "N");
+//     titlesMap.set(15, "O");
+//     titlesMap.set(16, "P");
+//     titlesMap.set(17, "Q");
+//     titlesMap.set(18, "R");
+//     titlesMap.set(19, "S");
+//     titlesMap.set(20, "T");
+//     titlesMap.set(21, "U");
+//     titlesMap.set(22, "V");
+//     titlesMap.set(23, "W");
+//     titlesMap.set(24, "X");
+//     titlesMap.set(25, "Y");
+//     titlesMap.set(26, "Z");
+    
+//     if (columnNumber <= 26) {
+//         res = titlesMap.get(columnNumber);
+//     } else {        
+//         const lettersArr: string[] = [];
+
+//         while (columnNumber > 0) {
+//             let rem = columnNumber % 26;
+
+//             if (rem === 0) {
+//                 lettersArr.push("Z");
+//                 columnNumber = Math.floor(columnNumber / 26) - 1;
+//             } else {// If remainder is non-zero
+//                 lettersArr.push(String.fromCharCode((rem - 1) + 'A'.charCodeAt(0)));
+//                 columnNumber = Math.floor(columnNumber / 26);
+//             }      
+//         } 
+
+//         res = lettersArr.reverse().join('');
+//     }
+
+//     return res;
+// };
+
+// convertToTitle(701);
+
+// console.log("Majority Element");
+
+// function majorityElement(nums: number[]): number {
+//     if (nums.length > 1) {
+//         const mapNums = new Map();
+//         nums.forEach(num => {
+//             if (mapNums.get(num)) {
+//                 mapNums.set(num, mapNums.get(num) + 1);
+//             } else {
+//                 mapNums.set(num, 1);
+//             }           
+//         });
+
+//         const numsArr = Array.from(mapNums);
+        
+//         let maxId = 0;
+//         for(let i = 0; i < numsArr.length; i++) {
+//             if (numsArr[maxId][1] < numsArr[i][1]) {
+//                 maxId = i;
+//             }
+//         }
+        
+//         return numsArr[maxId][0];
+//     }
+
+//     return nums[0];
+// };
+
+// majorityElement([2,2,1,1,1,2,2]);
+
+// console.log("Excel Sheet Column Number");
+
+// function titleToNumber(columnTitle: string): number {
+//     let result = 0;
+//     for (let i = 0; i < columnTitle.length; i++)  {
+//         result *= 26;
+//         result += columnTitle[i].charCodeAt(0) - 'A'.charCodeAt(0) + 1;
+//     }
+    
+//     return result;
+// };
+
+// titleToNumber("FXSHRXW");
+
+// console.log("Happy Number");
+
+// function isHappy(n: number): boolean {
+
+// };
+
+//Check If It Is a Straight Line
+// function checkStraightLine(coordinates: number[][]): boolean {
+//     if (coordinates.length > 2) {
+//         const firstPoint = coordinates[0];
+//         const secondPoint = coordinates[1];
+
+//         const xDifference = (secondPoint[0] - firstPoint[0]);
+//         const yDifference = (secondPoint[1] - firstPoint[1]);
+//         for (let i = 2; i < coordinates.length; i++) {            
+//             if (yDifference * (coordinates[i][0] - firstPoint[0]) != xDifference * (coordinates[i][1] - firstPoint[1])) {
+//                 return false;
+//             }
+//         }
+//     }   
+
+//     return true;
+// };
+
+// console.log("[[0,0],[0,1],[0,-1]]", checkStraightLine([[0,0],[0,1],[0,-1]]));
+
+//As Far from Land as Possible
+//Дан массив n x n, содержащий только 0 and 1, где 0 представляет воду и 1 представляет землю, 
+//найдете ячейку с водой, у которой расстояние до ближайщей земли максимизировано, 
+//и верните расстояние. Если не существует земли или воды в массиве, верните -1.
+//Расстояние, использованное в этой задаче - это расстояние Manhattan: 
+//расстояние между двумя ячейками (x0, y0) и (x1, y1) это |x0 - x1| + |y0 - y1|.
+
+function maxDistance(grid: number[][]): number {
+    const visited = [...grid];
+    const direction: Array<{i: number, j: number}> = [{i: -1, j: 0}, {i: 1, j: 0}, {i: 0, j: -1}, {i: 0, j: 1}];
+    let distance = 0;
+    let landCoordinates: Array<{i: number, j: number}> = [];
+    
+    for (let i = 0; i < grid.length; i++) {        
+        for (let j = 0; j < grid[i].length; j++) {            
+            if (grid[i][j] === 1) {
+                landCoordinates.push({i: i, j: j});
+            }
+        }
+    }
+    
+    while(landCoordinates.length > 0) {
+        let queueSize = landCoordinates.length;
+
+        while(queueSize--) {
+            let landCell = landCoordinates[0];
+            landCoordinates.splice(0, 1);
+
+            direction.forEach(dir => {
+                const x = landCell.i + dir.i;
+                const y = landCell.j + dir.j;
+
+                if (x >= 0 && y >= 0 && x < grid.length && y < grid.length && visited[x][y] === 0) {
+                    visited[x][y] = 1;
+                    landCoordinates.push({i: x, j: y});
+                }
+            });
+        }
+
+        distance++;
+    }
+
+    return (distance <= 1) ? -1 : distance - 1;
 };
-mySqrt(9)
+
+console.log("[[1,0,1],[0,0,0],[1,0,1]]", maxDistance([[1,0,1],[0,0,0],[1,0,1]]));
+console.log("[[1,0,0],[0,0,0],[0,0,0]]", maxDistance([[1,0,0],[0,0,0],[0,0,0]]));
+
