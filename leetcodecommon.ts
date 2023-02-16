@@ -542,44 +542,94 @@ console.log(searchInsert([1,3,5,6], 7));
 //Расстояние, использованное в этой задаче - это расстояние Manhattan: 
 //расстояние между двумя ячейками (x0, y0) и (x1, y1) это |x0 - x1| + |y0 - y1|.
 
-function maxDistance(grid: number[][]): number {
-    const visited = [...grid];
-    const direction: Array<{i: number, j: number}> = [{i: -1, j: 0}, {i: 1, j: 0}, {i: 0, j: -1}, {i: 0, j: 1}];
-    let distance = 0;
-    let landCoordinates: Array<{i: number, j: number}> = [];
+// function maxDistance(grid: number[][]): number {
+//     const visited = [...grid];
+//     const direction: Array<{i: number, j: number}> = [{i: -1, j: 0}, {i: 1, j: 0}, {i: 0, j: -1}, {i: 0, j: 1}];
+//     let distance = 0;
+//     let landCoordinates: Array<{i: number, j: number}> = [];
     
-    for (let i = 0; i < grid.length; i++) {        
-        for (let j = 0; j < grid[i].length; j++) {            
-            if (grid[i][j] === 1) {
-                landCoordinates.push({i: i, j: j});
-            }
+//     for (let i = 0; i < grid.length; i++) {        
+//         for (let j = 0; j < grid[i].length; j++) {            
+//             if (grid[i][j] === 1) {
+//                 landCoordinates.push({i: i, j: j});
+//             }
+//         }
+//     }
+    
+//     while(landCoordinates.length > 0) {
+//         let queueSize = landCoordinates.length;
+
+//         while(queueSize--) {
+//             let landCell = landCoordinates[0];
+//             landCoordinates.splice(0, 1);
+
+//             direction.forEach(dir => {
+//                 const x = landCell.i + dir.i;
+//                 const y = landCell.j + dir.j;
+
+//                 if (x >= 0 && y >= 0 && x < grid.length && y < grid.length && visited[x][y] === 0) {
+//                     visited[x][y] = 1;
+//                     landCoordinates.push({i: x, j: y});
+//                 }
+//             });
+//         }
+
+//         distance++;
+//     }
+
+//     return (distance <= 1) ? -1 : distance - 1;
+// };
+
+// console.log("[[1,0,1],[0,0,0],[1,0,1]]", maxDistance([[1,0,1],[0,0,0],[1,0,1]]));
+// console.log("[[1,0,0],[0,0,0],[0,0,0]]", maxDistance([[1,0,0],[0,0,0],[0,0,0]]));
+
+
+//Minimum Swaps to Group All 1's Together II
+//swap опрееделяется как две определенные позиции в массиве, значения между ними меняются.
+//Замкнутый по кругу массив определяется как массив, мы предполагаем, что его первый элемент и последний элемент являются смежными.
+//Дан двоичный замкнутый массив из чисел, верните минимальное кол-во свапов для того, чтобы группировать все 1 представленные в массиве в любой локации.
+
+function minSwaps(nums: number[]): number {
+    let minSwapsVal = 0;
+    let onesCount = 0;
+    const numsForManipulations = [...nums];
+
+    numsForManipulations.forEach(item => {
+        if (item === 1) {
+            onesCount++;
         }
-    }
-    
-    while(landCoordinates.length > 0) {
-        let queueSize = landCoordinates.length;
+    });  
 
-        while(queueSize--) {
-            let landCell = landCoordinates[0];
-            landCoordinates.splice(0, 1);
-
-            direction.forEach(dir => {
-                const x = landCell.i + dir.i;
-                const y = landCell.j + dir.j;
-
-                if (x >= 0 && y >= 0 && x < grid.length && y < grid.length && visited[x][y] === 0) {
-                    visited[x][y] = 1;
-                    landCoordinates.push({i: x, j: y});
+    let max = 0;
+    let count = 0;
+    if (onesCount > 0) {
+        for (let i = 0; i < numsForManipulations.length; i++) {
+            if (i < onesCount) {
+                if (numsForManipulations[i]) {
+                    count++;
+                }                
+            } else {
+                max = (max > count) ?  max : count;
+                if (numsForManipulations[i - onesCount] === 1) {
+                    numsForManipulations[i - onesCount] = 0;
                 }
-            });
-        }
 
-        distance++;
+                if (numsForManipulations[i] === 0) {
+                    numsForManipulations[i] = 1;
+                }
+            }
+            console.log("count", count, "max", max);  
+        }
     }
 
-    return (distance <= 1) ? -1 : distance - 1;
+    max = (max > count) ?  max : count;
+
+    minSwapsVal = onesCount - max;
+    
+    return minSwapsVal;
 };
 
-console.log("[[1,0,1],[0,0,0],[1,0,1]]", maxDistance([[1,0,1],[0,0,0],[1,0,1]]));
-console.log("[[1,0,0],[0,0,0],[0,0,0]]", maxDistance([[1,0,0],[0,0,0],[0,0,0]]));
+console.log("[0,1,0,1,1,0,0]", minSwaps([0,1,0,1,1,0,0]));
+console.log("[0,1,1,1,0,0,1,1,0]", minSwaps([0,1,1,1,0,0,1,1,0]));
+console.log("[1,1,0,0,1]", minSwaps([1,1,0,0,1]));
 
