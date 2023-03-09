@@ -2,15 +2,6 @@
 //Two Sum
 // function twoSum(nums: number[], target: number): number[] {
 //     let result: number[] = [];
-var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
-    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
-        if (ar || !(i in from)) {
-            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
-            ar[i] = from[i];
-        }
-    }
-    return to.concat(ar || Array.prototype.slice.call(from));
-};
 //     let firstId: number = 0;
 //     let secondId: number = 0;
 //     for (let i = 0; i < nums.length; i++) {
@@ -474,41 +465,89 @@ console.log(searchInsert([1, 3, 5, 6], 7));
 //swap опрееделяется как две определенные позиции в массиве, значения между ними меняются.
 //Замкнутый по кругу массив определяется как массив, мы предполагаем, что его первый элемент и последний элемент являются смежными.
 //Дан двоичный замкнутый массив из чисел, верните минимальное кол-во свапов для того, чтобы группировать все 1 представленные в массиве в любой локации.
-function minSwaps(nums) {
-    var minSwapsVal = 0;
-    var onesCount = 0;
-    var numsForManipulations = __spreadArray([], nums, true);
-    numsForManipulations.forEach(function (item) {
-        if (item === 1) {
-            onesCount++;
-        }
-    });
-    var max = 0;
-    var count = 0;
-    if (onesCount > 0) {
-        for (var i = 0; i < numsForManipulations.length; i++) {
-            if (i < onesCount) {
-                if (numsForManipulations[i]) {
-                    count++;
-                }
-            }
-            else {
-                max = (max > count) ? max : count;
-                if (numsForManipulations[i - onesCount] === 1) {
-                    numsForManipulations[i - onesCount] = 0;
-                }
-                if (numsForManipulations[i] === 0) {
-                    numsForManipulations[i] = 1;
-                }
-            }
-            console.log("count", count, "max", max);
+// function minSwaps(nums: number[]): number {
+//     let minSwapsVal = 0;
+//     let onesCount = 0;
+//     const numsForManipulations = [...nums];
+//     numsForManipulations.forEach(item => {
+//         if (item === 1) {
+//             onesCount++;
+//         }
+//     });  
+//     let max = 0;
+//     let count = 0;
+//     if (onesCount > 0) {
+//         for (let i = 0; i < numsForManipulations.length; i++) {
+//             if (i < onesCount) {
+//                 if (numsForManipulations[i] === 1) {
+//                     count++;
+//                 }                
+//             } else {
+//                 max = (max > count) ?  max : count;
+//                 if (numsForManipulations[i - onesCount] === 1) {
+//                     count--;
+//                 }
+//                 if (numsForManipulations[i] === 0) {
+//                     count++;
+//                 }
+//             }
+//             console.log("count", count, "max", max);  
+//         }
+//     }
+//     console.log("onesCount", onesCount);
+//     max = (max > count) ?  max : count;
+//     minSwapsVal = onesCount - max;
+//     return minSwapsVal;
+// };
+// console.log("[0,1,0,1,1,0,0]", minSwaps([0,1,0,1,1,0,0]));
+// console.log("[0,1,1,1,0,0,1,1,0]", minSwaps([0,1,1,1,0,0,1,1,0]));
+// console.log("[1,1,0,0,1]", minSwaps([1,1,0,0,1]));
+//Longest Substring Without Repeating Characters
+//Given a string s, find the length of the longest substring without repeating characters.
+// function lengthOfLongestSubstring(s: string): number {
+//     let res = 0;
+//     const substrings = new Set<string>();
+//     let j = 0;
+//     for (let i = 0; i < s.length; i++) {
+//         if (!substrings.has(s[i])) {
+//             substrings.add(s[i]);
+//             res = Math.max(res, i - j + 1);
+//         } else {
+//             while (s[j] !== s[i]) {
+//                 substrings.delete(s[j]);
+//                 j++;
+//             }
+//             substrings.delete(s[j]);
+//             j++;
+//             substrings.add(s[i]);
+//         }
+//     }
+//     return res;
+// };
+// console.log("aab", lengthOfLongestSubstring("aab"));
+// console.log("bbbbb", lengthOfLongestSubstring("bbbbb"));
+// console.log("pwwkew", lengthOfLongestSubstring("pwwkew"));
+//Climbing Stairs
+// Вы поднимаетесь по лестнице. Нужно n шагов для того, чтобы достигнуть вершины.
+// Каждый раз вы можете сделать 1 или 2 шага. Как много путей у вас есть для того, чтобы достигнуть вершины?
+function climbStairs(n) {
+    var res = 0;
+    var singleStep = 1;
+    var doubleStep = 2;
+    if (n / singleStep === n) {
+        res++;
+    }
+    var doubleStepsCount = Math.floor(n / doubleStep);
+    if (doubleStepsCount < 1) {
+        res++;
+    }
+    else {
+        if (doubleStepsCount / singleStep === doubleStepsCount) {
+            res++;
         }
     }
-    max = (max > count) ? max : count;
-    minSwapsVal = onesCount - max;
-    return minSwapsVal;
+    return res;
 }
 ;
-console.log("[0,1,0,1,1,0,0]", minSwaps([0, 1, 0, 1, 1, 0, 0]));
-console.log("[0,1,1,1,0,0,1,1,0]", minSwaps([0, 1, 1, 1, 0, 0, 1, 1, 0]));
-console.log("[1,1,0,0,1]", minSwaps([1, 1, 0, 0, 1]));
+console.log('2: ', climbStairs(2));
+console.log('3: ', climbStairs(3));
