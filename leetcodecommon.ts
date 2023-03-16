@@ -670,20 +670,86 @@ console.log(searchInsert([1,3,5,6], 7));
 // Вы поднимаетесь по лестнице. Нужно n шагов для того, чтобы достигнуть вершины.
 // Каждый раз вы можете сделать 1 или 2 шага. Как много путей у вас есть для того, чтобы достигнуть вершины?
 
-function climbStairs(n: number): number {
-    let res = 0;
-    const singleStep = 1;
-    const doubleStep = 2;
+// function climbStairs(n: number): number {
+//     let res = 0;
+//     const singleStep = 1;
+//     const doubleStep = 2;
 
-    if (n === 1) {
-        res = 1;
-        return res;
+//     if (n === singleStep) {
+//         return n;
+//     }
+
+//     if (n === doubleStep) {
+//         return n;
+//     }
+
+//     const steps: Array<number> = [singleStep, doubleStep];
+//     for (let i = doubleStep; i < n; i++) {
+//         steps[i] = steps[i - 1] + steps[i - 2];        
+//     }
+
+//     res = steps[n - 1];
+
+//     return res;
+// };
+
+// console.log('2: ', climbStairs(2));
+// console.log('3: ', climbStairs(3));
+
+//Pascal's Triangle
+function generate(numRows: number): number[][] {
+    const res: number[][] = [];
+    res[0] = [1];
+
+    for (let i = 1; i < numRows; i++) {
+        const subArray: number[] = [];
+        const subArrayLength = i + 1;
+        
+        subArray[0] = 1;
+        subArray[subArrayLength - 1] = 1;
+      
+        for (let j = 1; j < (subArrayLength - 1); j++) {            
+            const first = res[i - 1][j - 1] ? res[i - 1][j - 1] : 0;
+            const second = res[i - 1][j] ? res[i - 1][j] : 0;
+            subArray[j] = first + second;          
+        }
+
+        res[i] = subArray;
     }
-
-    let 
 
     return res;
 };
 
-console.log('2: ', climbStairs(2));
-console.log('3: ', climbStairs(3));
+// console.log(generate(5));
+
+//Pascal's Triangle II
+// function getRow(rowIndex: number): number[] {
+//     const triangle = generate(rowIndex + 1);   
+
+//     return triangle[rowIndex];
+// };
+
+// getRow(3);
+
+//Happy Number
+function isHappy(n: number): boolean {
+    let res = false;
+
+    while (n != 1) {
+        const arrNum = n.toString().split('');
+        let newNum = 0;
+        arrNum.forEach((num: string) => {
+            newNum += parseInt(num) * parseInt(num);
+        });
+        
+        n = newNum;
+    }
+    
+    if (n === 1) {
+        res = true;
+    }
+
+    return res;
+};
+
+console.log("isHappy", isHappy(2));

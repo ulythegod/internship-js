@@ -1,22 +1,23 @@
-class TreeNode {
-    constructor(val, left, right) {
+var TreeNode = /** @class */ (function () {
+    function TreeNode(val, left, right) {
         this.val = (val === undefined ? 0 : val);
         this.left = (left === undefined ? null : left);
         this.right = (right === undefined ? null : right);
     }
-}
-let tree = null;
-let arr1 = [1, 2, 3];
+    return TreeNode;
+}());
+var tree = null;
+var arr1 = [1, 2, 3];
 tree = createTree(arr1, tree, 0);
 inOrder(tree);
 //let depth: number = maxDepth(tree);
 //console.log(depth);
 //console.log(isValidBST(tree));
-console.log(isSymmetric(tree));
+//console.log(isSymmetric(tree));
 function createTree(values, tree, i) {
     if (values.length > 0) {
         if (i < values.length) {
-            let temp = null;
+            var temp = null;
             if (values[i] !== null && typeof values[i] === "number") {
                 temp = new TreeNode(Number(values[i]));
             }
@@ -37,11 +38,11 @@ function inOrder(root) {
     }
 }
 function maxDepth(root) {
-    let result = 0;
+    var result = 0;
     if (root) {
         result = 1;
-        let lDepth = maxDepth(root.left);
-        let rDepth = maxDepth(root.right);
+        var lDepth = maxDepth(root.left);
+        var rDepth = maxDepth(root.right);
         if (lDepth > rDepth) {
             return (lDepth + 1);
         }
@@ -66,7 +67,7 @@ function isValidBST(root) {
 }
 ;
 function isMirror(node1, node2) {
-    let result = false;
+    var result = false;
     if (node1 === null && node2 === null) {
         result = true;
         return result;
@@ -90,3 +91,23 @@ function isSymmetric(root) {
     }
 }
 ;
+//Same Tree
+function isSameTree(p, q) {
+    if (p === null && q === null) {
+        return true;
+    }
+    else if (p === null || q === null) {
+        return false;
+    }
+    else {
+        return (p.val === q.val && isSameTree(p.left, q.left) && isSameTree(p.right, q.right));
+    }
+}
+;
+var p = [1, 2, 1];
+var q = [1, 1, 2];
+var treeP = null;
+treeP = createTree(p, treeP, 0);
+var treeQ = null;
+treeQ = createTree(q, treeQ, 0);
+console.log(isSameTree(treeP, treeQ));

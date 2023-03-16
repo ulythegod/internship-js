@@ -16,7 +16,7 @@ inOrder(tree);
 //let depth: number = maxDepth(tree);
 //console.log(depth);
 //console.log(isValidBST(tree));
-console.log(isSymmetric(tree));
+//console.log(isSymmetric(tree));
 
 function createTree(values: Array<number | null>, tree: TreeNode | null, i: number): TreeNode | null {//Array<number | null> - generic тип
     if (values.length > 0) {
@@ -105,3 +105,23 @@ function isSymmetric(root: TreeNode | null): boolean {
         return true;
     }    
 };
+
+//Same Tree
+// function isSameTree(p: TreeNode | null, q: TreeNode | null): boolean {
+//     if (p === null && q === null) {
+//         return true;
+//     } else if (p === null || q === null) {
+//         return false;
+//     } else {
+//         return (p.val === q.val && isSameTree(p.left, q.left) && isSameTree(p.right, q.right));
+//     }
+// };
+
+// const p = [1,2,1];
+// const q = [1,1,2];
+// let treeP: TreeNode | null = null;
+// treeP = createTree(p, treeP, 0);
+// let treeQ: TreeNode | null = null;
+// treeQ = createTree(q, treeQ, 0);
+
+// console.log(isSameTree(treeP, treeQ));
