@@ -1,4 +1,3 @@
-"use strict";
 //Two Sum
 // function twoSum(nums: number[], target: number): number[] {
 //     let result: number[] = [];
@@ -89,34 +88,32 @@
 // };
 // divide(7, -3);
 //Insert positions
-function searchInsert(nums, target) {
-    if (nums.includes(target)) {
-        for (var i = 0; i < nums.length; i++) {
-            if (nums[i] === target) {
-                return i;
-            }
-        }
-    }
-    else {
-        if (nums[nums.length - 1] < target) {
-            return nums.length;
-        }
-        if (nums[0] > target) {
-            return 0;
-        }
-        for (var i = 0; i < nums.length; i++) {
-            if (target > nums[i] && target < nums[i + 1]) {
-                return (i + 1);
-            }
-        }
-    }
-}
-;
-var nums = [1, 3, 5, 6];
-var target = 5;
-console.log(searchInsert(nums, target));
-console.log(searchInsert([1, 3, 5, 6], 2));
-console.log(searchInsert([1, 3, 5, 6], 7));
+// function searchInsert(nums: number[], target: number): number {
+//     if (nums.includes(target)) {
+//         for (let i = 0; i < nums.length; i++) {
+//             if (nums[i] === target) {
+//                 return i;
+//             }
+//         }
+//     } else {        
+//         if (nums[nums.length - 1] < target) {
+//             return nums.length;
+//         }
+//         if (nums[0] > target) {
+//             return 0;
+//         }
+//         for (let i = 0; i < nums.length; i++) {
+//            if (target > nums[i] && target < nums[i + 1]) {
+//                return (i + 1);
+//            }          
+//         }
+//     }
+// };
+// const nums = [1,3,5,6];
+// const target = 5;
+// console.log(searchInsert(nums, target));
+// console.log(searchInsert([1,3,5,6], 2));
+// console.log(searchInsert([1,3,5,6], 7));
 //Majority Element
 // console.log("majority Element");
 // function majorityElement(nums: number[]): number {
@@ -550,24 +547,23 @@ console.log(searchInsert([1, 3, 5, 6], 7));
 // console.log('2: ', climbStairs(2));
 // console.log('3: ', climbStairs(3));
 //Pascal's Triangle
-function generate(numRows) {
-    var res = [];
-    res[0] = [1];
-    for (var i = 1; i < numRows; i++) {
-        var subArray = [];
-        var subArrayLength = i + 1;
-        subArray[0] = 1;
-        subArray[subArrayLength - 1] = 1;
-        for (var j = 1; j < (subArrayLength - 1); j++) {
-            var first = res[i - 1][j - 1] ? res[i - 1][j - 1] : 0;
-            var second = res[i - 1][j] ? res[i - 1][j] : 0;
-            subArray[j] = first + second;
-        }
-        res[i] = subArray;
-    }
-    return res;
-}
-;
+// function generate(numRows: number): number[][] {
+//     const res: number[][] = [];
+//     res[0] = [1];
+//     for (let i = 1; i < numRows; i++) {
+//         const subArray: number[] = [];
+//         const subArrayLength = i + 1;
+//         subArray[0] = 1;
+//         subArray[subArrayLength - 1] = 1;
+//         for (let j = 1; j < (subArrayLength - 1); j++) {            
+//             const first = res[i - 1][j - 1] ? res[i - 1][j - 1] : 0;
+//             const second = res[i - 1][j] ? res[i - 1][j] : 0;
+//             subArray[j] = first + second;          
+//         }
+//         res[i] = subArray;
+//     }
+//     return res;
+// };
 // console.log(generate(5));
 //Pascal's Triangle II
 // function getRow(rowIndex: number): number[] {
@@ -576,24 +572,270 @@ function generate(numRows) {
 // };
 // getRow(3);
 //Happy Number
-function isHappy(n) {
-    var res = false;
-    var _loop_1 = function () {
-        var arrNum = n.toString().split('');
-        var newNum = 0;
-        arrNum.forEach(function (num) {
-            newNum += parseInt(num) * parseInt(num);
-        });
-        n = newNum;
-    };
-    while (n > 1) {
-        _loop_1();
+// function isHappy(n: number): boolean {
+//     let res = false;
+//     const numbersSet = new Set<number>();
+//     while (n != 1) {
+//         const arrNum = n.toString().split('');
+//         let newNum = 0;
+//         arrNum.forEach((num: string) => {
+//             newNum += parseInt(num) * parseInt(num);
+//         });
+//         if (!numbersSet.has(newNum)) {
+//             numbersSet.add(newNum);
+//             n = newNum;
+//         } else {
+//             return res;
+//         }
+//     }
+//     if (n === 1) {
+//         res = true;
+//     }
+//     return res;
+// };
+// console.log("isHappy", isHappy(2));
+//Power of Two
+// function isPowerOfTwo(n: number): boolean {
+//     let res = false;
+//     while (n >= 2) {
+//         n = n / 2;
+//     }
+//     if (n === 1) {
+//         res = true;
+//     }
+//     return res;
+// };
+// console.log("1", isPowerOfTwo(1));
+// console.log("16", isPowerOfTwo(16));
+// console.log("3", isPowerOfTwo(3));
+//Add Digits
+// function addDigits(num: number): number {
+//     while (num >= 10) {
+//         const arrNum = num.toString().split('');
+//         let newNum = 0;
+//         arrNum.forEach((number: string) => {
+//             newNum += parseInt(number);
+//         });
+//         num = newNum;        
+//     }  
+//     return num;
+// };
+// console.log("10", addDigits(10));
+//Ugly Number
+// function keepDividingWhenDivisible(dividend: number, divisor: number) {
+//     while (dividend % divisor === 0) {
+//         dividend = dividend/divisor;
+//     }
+//     return dividend;
+// }
+// function isUgly(n: number): boolean {
+//     let res = false;
+//     if (n > 0) {
+//         n = keepDividingWhenDivisible(n, 2);        
+//         n = keepDividingWhenDivisible(n, 3);
+//         n = keepDividingWhenDivisible(n, 5);
+//         if (n === 1) {
+//             res = true;
+//         }
+//     }
+//     return res;
+// };
+// console.log("6", isUgly(6));
+// console.log("1", isUgly(1));
+// console.log("14", isUgly(14));
+//Missing Number
+// function missingNumber(nums: number[]): number {
+//     let res = 0;
+//     for (let i = 1; i <= nums.length; i++) {
+//         if (!nums.includes(i)) {
+//             res = i;
+//         }
+//     }
+//     return res;
+// };
+// console.log("[3,0,1]", missingNumber([3,0,1]));
+// console.log("[0,1]", missingNumber([0,1]));
+// console.log("[9,6,4,2,3,5,7,0,1]", missingNumber([9,6,4,2,3,5,7,0,1]));
+//Word Pattern
+// function wordPattern(pattern: string, s: string): boolean {
+//     let res = false;
+//     const stringLettersArray = s.split(' ');
+//     const patternLettersIds: Array<any> = [];
+//     const strLettersIds: Array<any> = [];
+//     if (pattern.length !== stringLettersArray.length) {
+//         return res;
+//     }
+//     for (let i = 0; i < pattern.length; i++) {
+//         const letterIndex = patternLettersIds.findIndex(item => item.letter === pattern[i]);
+//         if (letterIndex !== -1) {
+//             patternLettersIds[letterIndex].letterIds.push(i);
+//         } else {
+//             patternLettersIds.push({
+//                 letter: pattern[i],
+//                 letterIds: [i]
+//             });
+//         }
+//     }
+//     for (let i = 0; i < stringLettersArray.length; i++) {
+//         const letterIndex = strLettersIds.findIndex(item => item.letter === stringLettersArray[i]);
+//         if (letterIndex !== -1) {
+//             strLettersIds[letterIndex].letterIds.push(i);
+//         } else {
+//             strLettersIds.push({
+//                 letter: stringLettersArray[i],
+//                 letterIds: [i]
+//             });
+//         }        
+//     }    
+//     if (patternLettersIds.map(item => item.letterIds).toString() === strLettersIds.map(item => item.letterIds).toString() && patternLettersIds.length === strLettersIds.length) {
+//         res = true;
+//     }
+//     return res;
+// };
+// console.log("abba dog cat cat dog", wordPattern("abba", "dog cat cat dog"));
+// console.log("abba dog cat cat fish", wordPattern("abba", "dog cat cat fish"));
+//console.log("ab dog dog", wordPattern("ab", "dog dog"));
+//Nim Game
+// function canWinNim(n: number): boolean {
+//     let res = false;
+//     if (n % 4 !== 0) {
+//         res = true;
+//     }
+//     return res;
+// };
+// console.log("4", canWinNim(4));
+// console.log("1", canWinNim(1));
+// console.log("2", canWinNim(2));
+//Counting Bits
+// const convertToBinary = num => (num >>> 0).toString(2);
+// function countBits(n: number): number[] {
+//     let res: Array<number> = [];
+//     for (let i = 0; i <= n; i++) {
+//         const binNumbers = convertToBinary(i).split("");
+//         let num = 0;
+//         binNumbers.forEach(item => {
+//             num += parseInt(item);
+//         });       
+//         res.push(num);
+//     }
+//     return res;
+// };
+// //console.log("2", countBits(2));
+// console.log("5", countBits(5));
+//Reverse Vowels of a String
+// function reverseVowels(s: string): string {
+//     const volwes = ['a', 'e', 'i', 'o', 'u'];
+//     let i = 0;
+//     let j = s.length;
+//     const letters = s.split('');
+//     while (i < j) {
+//         if (volwes.includes(letters[i]?.toLowerCase()) && volwes.includes(letters[j]?.toLowerCase())) {
+//             const first = letters[i];
+//             letters[i] = letters[j];
+//             letters[j] = first;
+//             i++;
+//             j--;
+//         }
+//         if (!volwes.includes(letters[i]?.toLowerCase())) {
+//             i++;
+//         }
+//         if (!volwes.includes(letters[j]?.toLowerCase())) {
+//             j--;
+//         }
+//     }
+//     return letters.join('');
+// };
+// console.log("hello", reverseVowels("hello"));
+// console.log("leetcode", reverseVowels("leetcode"));
+//Intersection of Two Arrays
+// function intersection(nums1: number[], nums2: number[]): number[] {
+//     const nums: Array<number> = [];
+//     nums2.forEach(num => {
+//         if (nums1.includes(num)) {
+//             nums.push(num);
+//         }
+//     });
+//     const numsSet = new Set<number>(nums);  
+//     return Array.from(numsSet);
+// };
+// console.log("[1,2,2,1] [2,2]", intersection([1,2,2,1], [2,2]));
+//Valid perfect square
+// function isPerfectSquare(num: number): boolean {
+//     let res = false;
+//     let i = 1;
+//     let j = num;
+//     while (i <= j) {
+//         const mid = Math.round((i + j) / 2);        
+//         const square = mid * mid;
+//         if (square === num) {
+//             return true;
+//         } else if (square < num) {
+//             i = mid + 1;
+//         } else {
+//             j = mid - 1;
+//         }
+//     }
+//     return res;
+// };
+// console.log('16', isPerfectSquare(16));
+// console.log('14', isPerfectSquare(14));
+//Ransom Note
+// function canConstruct(ransomNote: string, magazine: string): boolean {
+//     let res = true;
+//     const counter: Array<any> = [];
+//     for (let i = 0; i < ransomNote.length; i++) {
+//         const letterIndex = counter.findIndex(item => item.letter === ransomNote[i]);
+//         if (letterIndex !== -1) {
+//             ++counter[letterIndex].count;
+//         } else {
+//             counter.push({
+//                 letter: ransomNote[i],
+//                 count: 1
+//             })
+//         }
+//     }
+//     counter.forEach(countItem => {
+//         const matchingLetters = magazine.split('').filter(letter => letter === countItem.letter);      
+//         if (matchingLetters?.length < countItem.count || matchingLetters?.length === 0) {
+//             res = false;
+//             return false;
+//         }       
+//     })
+//     return res;
+// };
+// console.log("aa ab", canConstruct("aa", "ab"));
+// console.log("aa ab", canConstruct("aa", "ab"));
+// console.log("aa aab", canConstruct("aa", "aab"));
+//Find the Difference
+// function findTheDifference(s: string, t: string): string {
+//     const sortS = s.split('').sort();
+//     const sortT = t.split('').sort();
+//     for (let i = 0; i < s.length; i++) {        
+//         if (sortS[i] !== sortT[i]) {
+//             return sortT[i];
+//         }        
+//     }
+//     return sortT[s.length];
+// };
+// console.log("abcd abcde", findTheDifference("abcd", "abcde"));
+// console.log(" y", findTheDifference("", "y"));
+// console.log("a aa", findTheDifference("a", "aa"));
+//Assign Cookies
+function findContentChildren(g, s) {
+    s.sort();
+    g.sort();
+    var i = 0;
+    var j = 0;
+    while (i < g.length && j < s.length) {
+        if (s[j] > g[i]) {
+            i++;
+        }
+        else {
+            j++;
+        }
     }
-    console.log("n", n);
-    if (n === 1) {
-        res = true;
-    }
-    return res;
+    return i;
 }
 ;
-console.log("isHappy", isHappy(2));
+console.log("[1,2,3] [1,1]", findContentChildren([1, 2, 3], [1, 1]));
+console.log("[1,2] [1,2,3]", findContentChildren([1, 2], [1, 2, 3]));
