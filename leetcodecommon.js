@@ -874,48 +874,485 @@
 // };
 // console.log("leeeeetcode yyyyylyy", isSubsequence("leeeeetcode", "yyyyylyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyeyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyeyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyeyyyyyyeyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyeyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyeyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyytyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyycyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyoyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyydyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyeyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"));
 //Longest Palindrome
-function longestPalindrome(s) {
-    if (s.length === 1) {
-        return s.length;
-    }
-    var lettersCounter = [];
-    var strS = s.split('');
-    var palindromeLength = 0;
-    strS.forEach(function (letter) {
-        var index = lettersCounter.findIndex(function (item) { return item.letter === letter; });
-        if (index !== -1) {
-            lettersCounter[index].count++;
+// function longestPalindrome(s: string): number {
+//     if (s.length === 1) {
+//         return s.length;
+//     }
+//     const lettersCounter: Array<{letter: string, count: number}> = [];
+//     const strS = s.split('');
+//     let palindromeLength = 0;
+//     strS.forEach((letter) => {
+//         const index = lettersCounter.findIndex(item => item.letter === letter);
+//         if (index !== -1) {
+//             lettersCounter[index].count++;
+//         } else {            
+//             lettersCounter.push({
+//                 letter: letter,
+//                 count: 1
+//             })
+//         }
+//     });    
+//     lettersCounter.forEach(element => {        
+//         palindromeLength += Math.floor(element.count / 2) * 2;
+//         if (palindromeLength % 2 === 0 && element.count % 2 === 1) {
+//             palindromeLength++;
+//         }
+//     });
+//     return palindromeLength;
+// };
+// console.log("abccccdd", longestPalindrome("abccccdd"));
+// console.log("ccc", longestPalindrome("ccc"));
+//Third Maximum Number
+// function thirdMax(nums: number[]): number {
+//     const numsSet = new Set(nums);
+//     const sortedArrWithoutDuplicates = Array.from(numsSet);
+//     sortedArrWithoutDuplicates.sort((a, b) => b - a);  
+//     return (sortedArrWithoutDuplicates.length >= 3) ? sortedArrWithoutDuplicates[2] : sortedArrWithoutDuplicates[0];
+// };
+// console.log("[3,2,1]", thirdMax([3,2,1]));
+// console.log("[1,2]", thirdMax([1,2]));
+// console.log("[2,2,3,1]", thirdMax([2,2,3,1]));
+//Add Strings
+// function addStrings(num1: string, num2: string): string {
+//     let resNum = 0;
+//     const lengthDiff = num1.length < num2.length ? num2.length - num1.length : num1.length - num2.length;
+//     let difflength = "";
+//     for (let i = 0; i < lengthDiff; i++) {
+//         difflength += "_";        
+//     }
+//     let biggerStr = "";
+//     let smallerStr = "";
+//     if (num1.length === num2.length) {
+//         smallerStr = num1;
+//         biggerStr = num2;
+//     } else if (num1.length > num2.length) {
+//         smallerStr = difflength + num2;
+//         biggerStr = num1;
+//     } else {
+//         smallerStr = difflength + num1;
+//         biggerStr = num2;
+//     }
+//     const biggerArrStr = biggerStr.split('');
+//     const smallerArrStr = smallerStr.split('');  
+//     let carry = 0;
+//     console.log("biggerArrStr", biggerArrStr, "smallerArrStr", smallerArrStr);
+//     for (let i = 0; i < biggerArrStr.length; i++) {
+//         let zeros = "";
+//         for (let j = 0; j < (biggerArrStr.length - 1 - i); j++) {
+//             zeros += "0";
+//         }
+//         const bigNum = biggerArrStr[i] + zeros;
+//         const smallerNum = (smallerArrStr[i] && smallerArrStr[i] !== "_") ? smallerArrStr[i] + zeros : "0";
+//         const numSum = Number(bigNum) + Number(smallerNum) + carry;
+//         if (carry )
+//         resNum += Number(bigNum) + Number(smallerNum);
+//         console.log("i", i, "bigNum", bigNum, 'smallerNum', smallerNum, "resNum", resNum, "Number(bigNum) + Number(smallerNum)", Number(bigNum) + Number(smallerNum));
+//     }
+//     console.log("???!!!", 18582873146362450 + 5);    
+//     return String(resNum);
+// };
+// // console.log("11 123", addStrings("11", "123"));
+// // console.log("456 77", addStrings("456", "77"));
+// console.log("18582506933032752 366213329703", addStrings("18582506933032752", "366213329703"));
+//Find All Numbers Disappeared in an Array
+// function findDisappearedNumbers(nums: number[]): number[] {
+//     const res: number[] = [];
+//     for (let i = 1; i <= nums.length; i++) {
+//         if (!nums.includes(i)) {
+//             res.push(i);
+//         }        
+//     }
+//     return res;
+// };
+// console.log("[4,3,2,7,8,2,3,1]", findDisappearedNumbers([4,3,2,7,8,2,3,1]));
+// console.log("[1,1]", findDisappearedNumbers([1,1]));
+//Arranging Coins
+// function arrangeCoins(n: number): number {
+//     let left = 0;
+//     let right = n;
+//     let k = 0;
+//     let curr = 0;
+//     while (left <= right) {
+//         k = Math.floor(left + (right - left) / 2);
+//         curr = k * (k + 1) / 2;
+//         if (curr === n) {
+//             return k;
+//         }
+//         if (n < curr) {
+//             right = k - 1;
+//         } else {
+//             left = k + 1;
+//         }
+//     }
+//     return right;
+// };
+// console.log("5", arrangeCoins(5));
+// console.log("8", arrangeCoins(8));
+//Removing Stars From a String
+// function removeStars(s: string): string {
+//     const sArr: Array<String> = [];
+//     for (let i = 0; i < s.length; i++) {
+//         if (s[i] === '*') {            
+//             sArr.pop();
+//         } else {
+//             sArr.push(s[i]);
+//         }
+//     }    
+//     const res = sArr.join('');
+//     return res;
+// };
+// console.log("leet**cod*e", removeStars("leet**cod*e"));
+// console.log("erase*****", removeStars("erase*****"));
+// //License Key Formatting
+// function licenseKeyFormatting(s: string, k: number): string {
+//     let res = "";
+//     const resArr: Array<Array<String>> = [];
+//     let j = 0;
+//     s = s.replace(/-/g, "");
+//     for (let i = (s.length - 1); i >= 0; i--) {        
+//         if (resArr[j]?.length < k && resArr[j] !== undefined) {
+//             resArr[j]?.push(s[i].toUpperCase());
+//         } else if (resArr[j] === undefined) {
+//             resArr[j] = [s[i].toUpperCase()];
+//         } else {
+//             j++;
+//             resArr[j] = [s[i].toUpperCase()];
+//         }            
+//     }
+//     res = resArr.map((item) => {
+//         return item.reverse().join('');
+//     }).reverse().join('-');   
+//     return res;
+// };
+// console.log("5F3Z-2e-9-w 4", licenseKeyFormatting("5F3Z-2e-9-w", 4));
+// console.log("2-5g-3-J 2", licenseKeyFormatting("2-5g-3-J", 2));
+//Number Complement
+// function findComplement(num: number): number {
+//     let binNum = (num >>> 0).toString(2).split('');
+//     const reversed = binNum.map((numItem: string) => {
+//         if (numItem === "0") {
+//             return "1";
+//         } else {
+//             return "0";
+//         }
+//     });   
+//     return parseInt(reversed.join(''), 2);
+// };
+// console.log("5:", findComplement(5));
+// console.log("1:", findComplement(1));
+//Simplify Path
+// function simplifyPath(path: string): string {
+//     let res = "";
+//     const pathArr = path.split('/');
+//     const newPathParts: Array<String> = [];
+//     pathArr.forEach((item) => {
+//         if (item.length > 0 && item !== '.' && item !== '..') {
+//             newPathParts.push(item);
+//         }
+//         if (item === '..') {
+//             newPathParts.pop();
+//         }
+//     })
+//     res = '/' + newPathParts.join('/'); 
+//     return res;
+// };
+// console.log("/a/./b/../../c/", simplifyPath("/a/./b/../../c/"));
+// console.log("/...", simplifyPath("/..."));
+// console.log("/../", simplifyPath("/../"));
+// console.log("/home//foo/", simplifyPath("/home//foo/"));
+//Filter Elements from Array
+// function filter(arr: number[], fn: (n: number, i: number) => any): number[] {
+//     const res: number[] = [];
+//     arr.forEach((n: number, i: number) => {
+//         if (fn(n, i)) {
+//             res.push(n);
+//         }
+//     });
+//     return res;
+// };
+// function greaterThan10(n) { return n > 10; }
+// function firstIndex(n, i) { return i === 0; }
+// function plusOne(n) { return n + 1 }
+// console.log("[0,10,20,30]", filter([0,10,20,30], greaterThan10));
+// console.log("[1,2,3]", filter([1,2,3], firstIndex));
+// console.log("[-2,-1,0,1,2]", filter([-2,-1,0,1,2], plusOne));
+//Apply Transform Over Each Element in Array
+// function map1(arr: number[], fn: (n: number, i: number) => number): number[] {
+//     const returnedArray: number[] = [];
+//     arr.forEach((n: number, i: number) => {        
+//         returnedArray.push(fn(n, i));
+//     });
+//     return returnedArray;
+// };
+// function plusone(n) { return n + 1; }
+// function plusI(n, i) { return n + i; }
+// function constant() { return 42; }
+// console.log("[1,2,3]", map1([1,2,3], plusone));
+// console.log("[1,2,3]", map1([1,2,3], plusI));
+// console.log("[10,20,30]", map1([10,20,30], constant));
+// //Array Prototype Last
+// interface Array<T> {    
+//     last(): T | -1;
+// }
+// Array.prototype.last = function() {
+//     if (this.length === 0) {
+//         return -1;
+//     } else {
+//         return this[this.length - 1];
+//     }   
+// };
+// const arr2 = [1, 2, 3];
+// arr2.last(); // 3
+// console.log("last", arr2.last());
+// const arr3 = [];
+// arr3.last(); // 3
+// console.log("last", arr3.last());
+//Counter (объект функции, NFE)
+// function createCounter(n: number): () => number {
+//     let count = n;
+//     return function() {
+//         return count++;
+//     };
+// }
+// const counter1 = createCounter(10)
+// counter1() // 10
+// counter1() // 11
+// counter1() // 12
+//Sleep
+// async function sleep(millis: number): Promise<void> {
+//     return await new Promise<void>(resolve => setTimeout(resolve, millis));
+// }
+// let t = Date.now()
+// sleep(100).then(() => console.log(Date.now() - t)) // 100
+//Array Reduce Transformation
+// type Fn = (accum: number, curr: number) => number
+// function reduce(nums: number[], fn: Fn, init: number): number {
+//     let res = init;
+//     nums.forEach((num: number) => {
+//         res = fn(res, num)
+//     })
+//     return res;
+// };
+// function sum(accum, curr) { return accum + curr; }
+// function sum1(accum, curr) { return accum + curr * curr; }
+// function sum2(accum, curr) { return 0; }
+// console.log("[1,2,3,4]", reduce([1,2,3,4], sum, 0));
+// console.log("[1,2,3,4]", reduce([1,2,3,4], sum1, 100));
+// console.log("[]", reduce([], sum2, 25));
+//Function Composition
+// type F = (x: number) => number;
+// function compose(functions: F[]): F {    
+//     const res = (x: number) => {
+//         if (functions.length === 0) {
+//             return x;
+//         } else {
+//             let result = x;
+//             for (let i = functions.length - 1; i >= 0; i--) {
+//                 result = functions[i](result);
+//             }
+//             return result;
+//         }
+//     }
+//     return res;
+// };
+// const fn = compose([x => x + 1, x => 2 * x])
+// console.log("[x => x + 1, x => 2 * x]", fn(4));
+//Longest Palindromic Subsequence
+// function longestPalindromeSubseq(s: string): number {
+//     let n = s.length;
+//     let memo: Array<Array<number>> = [];
+//     return lps(s, 0, n - 1, memo);
+// };
+// function lps(s: string, i: number, j: number, memo: Array<Array<number>>) {
+//     if (Array.isArray(memo[i])) {
+//         if (memo[i][j] !== 0) {
+//             return memo[i][j];
+//         }        
+//     }
+//     if (i > j) {
+//         return 0;
+//     }
+//     if (i === j) {
+//         return 1;
+//     }
+//     if (s[i] === s[j]) {
+//         if (Array.isArray(memo[i])) {
+//             memo[i][j] = lps(s, i + 1, j - 1, memo) + 2;
+//         } else {
+//             memo[i] = [lps(s, i + 1, j - 1, memo) + 2];
+//         }        
+//     } else {
+//         if (Array.isArray(memo[i])) {
+//             memo[i][j] = Math.max(lps(s, i + 1, j, memo), lps(s, i, j - 1, memo))
+//         } else {
+//             memo[i] = [Math.max(lps(s, i + 1, j, memo), lps(s, i, j - 1, memo))];
+//         }        
+//     }
+//     console.log("memo", memo);    
+//     if (Array.isArray(memo[i])) {        
+//         return memo[i][j];     
+//     }
+// }
+// console.log("bbbab", longestPalindromeSubseq("bbbab"));
+// console.log("cbbd", longestPalindromeSubseq("cbbd"));
+//JSON Deep Equal
+// function areDeeplyEqual(o1: any, o2: any): boolean {
+//     if (o1 === o2) {
+//         return true;
+//     }
+//     if (typeof o1 !== typeof o2) {
+//         return false;
+//     } else {
+//         if (typeof o1 !== 'object' && typeof o2 !== 'object') {
+//             if (o1 === o2) {
+//                 return true;
+//             } else {
+//                 return false;
+//             }
+//         } else {
+//             const o1Keys = Object.keys(o1).sort(); 
+//             const o2Keys = Object.keys(o2).sort();
+//             if (
+//                 JSON.stringify(o1Keys) !== JSON.stringify(o2Keys) || 
+//                 (Array.isArray(o1) && !Array.isArray(o2)) ||
+//                 (!Array.isArray(o1) && Array.isArray(o2))
+//             ) {
+//                 return false;
+//             } else {
+//                 let res = true;
+//                 o1Keys.forEach(key => {
+//                     res = areDeeplyEqual(o1[key], o2[key]);
+//                 })
+//                 return res;
+//             }
+//         }
+//     }
+// };
+// // console.log(`o1 = {"x":1,"y":2}, o2 = {"x":1,"y":2}`, areDeeplyEqual({"x":1,"y":2}, {"x":1,"y":2}));
+// // console.log(`o1 = {"y":2,"x":1}, o2 = {"x":1,"y":2}`, areDeeplyEqual({"y":2,"x":1}, {"x":1,"y":2}));
+// // console.log(`o1 = {"x":null,"L":[1,2,3]}, o2 = {"x":null,"L":["1","2","3"]}`, areDeeplyEqual({"x":null,"L":[1,2,3]}, {"x":null,"L":["1","2","3"]}));
+// // console.log(`o1 = true, o2 = false`, areDeeplyEqual(true, false));
+// console.log(`o1 = {"x":null,"L":[1,2,3]}, o2 = {"x":null,"L":[1,2,3]}`, areDeeplyEqual({"x":null,"L":[1,2,3]}, {"x":null,"L":[1,2,3]}));
+//Next Greater Element I
+// function nextGreaterElement(nums1: number[], nums2: number[]): number[] {
+//     const res: number[] = [];
+//     nums1.forEach((num: number) => {
+//         const index = nums2.findIndex(item => item === num);        
+//         if (index !== -1) {
+//             let flag = -1;
+//             for (let i = index + 1; i < nums2.length; i++) {                
+//                 if (num < nums2[i]) {
+//                     flag = nums2[i];
+//                     break;
+//                 }              
+//             } 
+//             res.push(flag);
+//         }
+//     })
+//     return res;
+// };
+// console.log("nums1 = [4,1,2], nums2 = [1,3,4,2]", nextGreaterElement([4,1,2], [1,3,4,2]));
+// console.log("nums1 = [2,4], nums2 = [1,2,3,4]", nextGreaterElement([2,4], [1,2,3,4]));
+// console.log("nums1 = [1,3,5,2,4], nums2 = [6,5,4,3,2,1,7]", nextGreaterElement([1,3,5,2,4], [6,5,4,3,2,1,7]));
+//Keyboard Row
+// function findWords(words: string[]): string[] {
+//     const res: string[] = [];
+//     const rows = [
+//         "qwertyuiop",
+//         "asdfghjkl",
+//         "zxcvbnm"
+//     ];
+//     words.forEach(word => {
+//         const row = rows.find(row => row.includes(word[0].toLowerCase()))?.split('');
+//         if (row) {
+//             let letterIndex = -1;        
+//             for (let i = 0; i < word.length; i++) {
+//                 letterIndex = row.findIndex(letter => word[i].toLowerCase() === letter);
+//                 if (letterIndex === -1) {
+//                     break;
+//                 }
+//             }
+//             if (letterIndex !== -1) {
+//                 res.push(word);
+//             }
+//         }        
+//     });  
+//     return res;
+// };
+// console.log(`["Hello","Alaska","Dad","Peace"]`, findWords(["Hello","Alaska","Dad","Peace"]));
+// console.log(`["omk"]`, findWords(["omk"]));
+// console.log(`["adsdf","sfd"]`, findWords(["adsdf","sfd"]));
+//Relative Ranks
+// function findRelativeRanks(score: number[]): string[] {
+//     let resMapping: Array<any> = [];
+//     score.forEach((item, id) => {
+//         resMapping.push({
+//             score: item,
+//             index: id
+//         })
+//     });
+//     resMapping.sort((a, b) => a.score < b.score ? 1 : -1);
+//     resMapping = resMapping.map((item, id) => {
+//         if (id === 0) {
+//             return {
+//                 ...item,
+//                 value: "Gold Medal"
+//             }
+//         } else if (id === 1) {
+//             return {
+//                 ...item,
+//                 value: "Silver Medal"
+//             }
+//         } else if (id === 2) {
+//             return {
+//                 ...item,
+//                 value: "Bronze Medal"
+//             }
+//         } else {
+//             return {
+//                 ...item,
+//                 value: `${id + 1}`
+//             }
+//         }        
+//     });
+//     resMapping.sort((a, b) => a.index > b.index ? 1 : -1);
+//     return resMapping.map(item => {
+//         return item.value
+//     });
+// };
+// console.log("[5,4,3,2,1]", findRelativeRanks([5,4,3,2,1]));
+// console.log("[10,3,8,9,4]", findRelativeRanks([10,3,8,9,4]));
+//Detect Capital
+function detectCapitalUse(word) {
+    var isUppercase = true;
+    var isLowerCase = true;
+    var isFirstUpperCase = true;
+    for (var i = 0; i < word.length; i++) {
+        if (word[i] !== word[i].toUpperCase()) {
+            isUppercase = false;
+            break;
         }
-        else {
-            lettersCounter.push({
-                letter: letter,
-                count: 1
-            });
-        }
-    });
-    if (lettersCounter.length === 1) {
-        palindromeLength = lettersCounter[0].count;
     }
-    else {
-        var singleLettersCount = lettersCounter.filter(function (item) { return item.count === 1; });
-        if (singleLettersCount.length > 1) {
-            palindromeLength = 1;
+    for (var i = 0; i < word.length; i++) {
+        if (word[i] !== word[i].toLowerCase()) {
+            isLowerCase = false;
+            break;
         }
-        console.log("singleLettersCount", singleLettersCount);
-        lettersCounter.forEach(function (element) {
-            if (element.count > 1) {
-                if (element.count % 2 === 0) {
-                    console.log("element", element);
-                    palindromeLength += element.count;
-                }
-                else {
-                    palindromeLength += element.count - 1;
-                }
-            }
-        });
     }
-    return palindromeLength;
+    for (var i = 0; i < word.length; i++) {
+        if (i === 0 && word[0] !== word[0].toUpperCase()) {
+            isFirstUpperCase = false;
+            break;
+        }
+        else if (i !== 0 && word[i] !== word[i].toLowerCase()) {
+            isFirstUpperCase = false;
+            break;
+        }
+    }
+    return (isUppercase || isLowerCase || isFirstUpperCase);
 }
 ;
-console.log("abccccdd", longestPalindrome("abccccdd"));
-console.log("ccc", longestPalindrome("ccc"));
+console.log("USA", detectCapitalUse("USA"));
+console.log("FlaG", detectCapitalUse("FlaG"));
+console.log("leetcode", detectCapitalUse("leetcode"));
+console.log("Google", detectCapitalUse("Google"));
